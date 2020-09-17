@@ -10,8 +10,10 @@ export default {
 </script>
 <style scoped>
 #logo{
+    margin-top:30px;
     width:50px;
     height:50px;
+    float:left;
     
 }
 </style>
