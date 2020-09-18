@@ -33,7 +33,7 @@ export default {
     methods:{
         scrollToTop(){
             var dis = window.pageYOffset;
-            console.log(dis);
+            //console.log(dis);
             
             if(dis > 859.5){     
                 var header = document.getElementsByClassName('header'); 
@@ -48,9 +48,9 @@ export default {
             }
             else{              
                 var header = document.getElementsByClassName('header'); 
-                header.style.opacity = '0.5';
+                
                 var name = header[0].getElementsByClassName('name');
-                header[0].style.removeProperty('backgroundColor');
+                header[0].style.backgroundColor = 'transparent';
                 name[0].style.color = 'white';
                 console.log(name[0]);  
                
@@ -69,7 +69,9 @@ export default {
     border:1px solid rgb(182, 51, 123);
     position:fixed;
     top:0px;
-    z-index:5
+    z-index:5;
+    transition: background-color 0.5s linear
+
 }
 .header2{
     height: 170px;
@@ -79,6 +81,7 @@ export default {
     top:0px;
     z-index:5;
     background-color: white;
+    transition: background-color 0.5s linear
 }
 .name{
     float:left;
