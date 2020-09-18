@@ -132,17 +132,17 @@ export default {
     height: 1100px;
     width:100%;
     border:1px solid rgba(226, 12, 12); 
-    background-color: rgba(13,71,161,0.5);
+    background-color: rgba(13,71,161,0.6);
 }
 #words{
     position:absolute;
     top:30%;
     left:50%;
-    margin-left:-300px;
-    margin-top:-25px;
-    width:600px;
+    margin-left:-345px;
+    margin-top:-65px;
+    width:690px;
     height:150px;
-    font-size: 100px;
+    font-size: 130px;
     color:white;
     
 }
@@ -151,7 +151,7 @@ export default {
 }
 #news{
     position:relative;
-    height: 1300px;
+    height: 1200px;
     width:100%;
     border:1px solid rgb(228, 191, 28); 
 }
