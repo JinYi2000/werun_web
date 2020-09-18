@@ -4,12 +4,13 @@
         <myHeader></myHeader>
     </div>
     <div id='pics'>
-        <img src='@/assets/img/pic1.jpg'>
+        <img id='pic' src='@/assets/img/pic1.jpg'>
     </div>
     <div id='cover'>
         <span id='words'>Your world, we run</span>
     </div>
     <div id='news'>
+        <latestNews></latestNews>
     </div>
     <div id='fields'>
     </div>
@@ -23,42 +24,60 @@
 </template>
 <script>
 import myHeader from '@/components/header'
+import latestNews from '@/components/news'
 export default {
     data(){
-
+        return{
+            pics:['https://i.loli.net/2020/09/18/Nhb4kPpRyqSFKvo.jpg',
+                'https://i.loli.net/2020/09/18/NjPhxZG7mYElct1.jpg',
+                'https://i.loli.net/2020/09/18/83UTGFNXZAqI4fj.jpg',
+                'https://i.loli.net/2020/09/18/kiNqcVYyZlTdvRC.jpg',
+                'https://i.loli.net/2020/09/18/JGKym8zxdevYuj5.jpg'],
+            picNum:0,
+        }
+            
     },
     mounted(){
-        window.addEventListener('scroll',this.scrollToTop)
+        window.addEventListener('scroll',this.scrollToTop);
+        //this.changePic(1000);
     },
     methods:{
         scrollToTop(){
             var dis = window.pageYOffset;
             //console.log(dis);
-            
+            //this.changePic();
             if(dis > 859.5){     
                 var header = document.getElementsByClassName('header'); 
                 var name = header[0].getElementsByClassName('name');
-                console.log(name[0]);
-                header[0].style.backgroundColor = 'white';
-                
-                name[0].style.color = '#0d47a1';
-                
-                
-                
+                //console.log(name[0]);
+                header[0].style.backgroundColor = 'white';               
+                name[0].style.color = '#0d47a1';           
             }
             else{              
-                var header = document.getElementsByClassName('header'); 
-                
+                var header = document.getElementsByClassName('header');               
                 var name = header[0].getElementsByClassName('name');
                 header[0].style.backgroundColor = 'transparent';
                 name[0].style.color = 'white';
-                console.log(name[0]);  
-               
+                //console.log(name[0]);              
             }
+        },
+        changePic(interval){      
+            setInterval(this.changePic2,interval);
+        },
+        changePic2(){
+            //console.log(this);
+            if(this.picNum >= this.pics.length){
+                this.picNum = 0;
+            }
+            var pic = document.getElementById('pic');
+            console.log(this.picNum);
+            console.log(this.pics[this.picNum])
+            pic.src = this.pics[this.picNum];
+            this.picNum++;
         }
     },
     components:{
-        myHeader
+        myHeader,latestNews
     }
 }
 </script>
@@ -105,13 +124,15 @@ export default {
     width:100%;
     height:1038px;
 }
+#pic{
+    transition: all 0.5s linear;
+}
 #cover{
     margin-top:-1170px;
     height: 1100px;
     width:100%;
-    border:1px solid rgb(226, 12, 12); 
-    background-color: #0d47a1;
-    opacity:0.5
+    border:1px solid rgba(226, 12, 12); 
+    background-color: rgba(13,71,161,0.5);
 }
 #words{
     position:absolute;
@@ -122,14 +143,15 @@ export default {
     width:600px;
     height:150px;
     font-size: 100px;
-    color:#eceff1;
-    opacity: 1 !important;
+    color:white;
+    
 }
 #words span{
     opacity: 1 !important;
 }
 #news{
-    height: 500px;
+    position:relative;
+    height: 1300px;
     width:100%;
     border:1px solid rgb(228, 191, 28); 
 }
