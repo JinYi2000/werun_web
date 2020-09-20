@@ -13,6 +13,7 @@
         <latestNews></latestNews>
     </div>
     <div id='fields'>
+        <fields></fields>
     </div>
     <div id='projects'>
     </div>
@@ -25,6 +26,7 @@
 <script>
 import myHeader from '@/components/header'
 import latestNews from '@/components/news'
+import fields from '@/components/fields'
 export default {
     data(){
         return{
@@ -77,7 +79,7 @@ export default {
         }
     },
     components:{
-        myHeader,latestNews
+        myHeader,latestNews,fields
     }
 }
 </script>
@@ -156,7 +158,7 @@ export default {
     border:1px solid rgb(228, 191, 28); 
 }
 #fields{
-    height: 500px;
+    height: 1200px;
     width:100%;
     border:1px solid rgb(184, 41, 60); 
 }

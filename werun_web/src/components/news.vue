@@ -9,6 +9,8 @@
         </div>
     </div>
     <span id='more'>更多 ></span>
+    <div id='left'>66666</div>
+    <div id='change'>77</div>
 </div>
 </template>
 <script>
@@ -57,6 +59,13 @@ export default {
 }
 </script>
 <style scoped>
+.change{
+    position:absolute;
+    width:100px;
+    height:100px;
+    background-color: red;  
+    
+}
 .news_date{
     position:absolute;
     bottom:20px;
@@ -110,6 +119,7 @@ export default {
     margin-right:50px;
     box-shadow: 5px 5px 5px 3px #888888;
     border-radius: 10px;
+    transition:all 0.2s linear;
 }
 .news:hover{
     position:relative;
@@ -122,6 +132,6 @@ export default {
     margin-right:50px;
     box-shadow: 5px 5px 5px 3px #888888;
     border-radius: 10px;
-    transition:all 0.2s linear;
+    
 }
 </style>
