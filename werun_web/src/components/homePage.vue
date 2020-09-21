@@ -36,8 +36,7 @@ export default {
                 'https://i.loli.net/2020/09/18/kiNqcVYyZlTdvRC.jpg',
                 'https://i.loli.net/2020/09/18/JGKym8zxdevYuj5.jpg'],
             picNum:0,
-        }
-            
+        }       
     },
     mounted(){
         window.addEventListener('scroll',this.scrollToTop);

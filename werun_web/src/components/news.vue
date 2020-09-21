@@ -1,7 +1,7 @@
 <template>
 <div>
     <span id='title'>最新动态</span>
-    <div id='newsContent'>
+    <div id='newsContent'  @mouseover="showPics()" @mouseout="concealPics()">
         <div class='news' v-for="(item,key) in newsList">
             <img class='news_img' :src='item.picSrc'>
             <span class='news_title'>{{item.title}}</span>
@@ -9,14 +9,19 @@
         </div>
     </div>
     <span id='more'>更多 ></span>
-    <div id='left'>66666</div>
-    <div id='change'>77</div>
+    <div id='left'  @mouseover="showPics()" @mouseout="concealPics()">
+        <img @click="moveLeft()" class='change' src='@/assets/img/左.png'>
+    </div>
+    <div id='right' @click="moveRight()" @mouseover="showPics()" @mouseout="concealPics()">
+        <img class='change' src='@/assets/img/右.png'>
+    </div>
 </div>
 </template>
 <script>
 export default {
     data(){
         return{
+            leftDis:0,
             newsList:[
                 {
                     title:'2016级舒钰博同学论文发表于JCR 1区杂志 CMC-Computers Materials & Continua',
@@ -54,17 +59,90 @@ export default {
                 
             ]
         }
-    }
-    
+    },
+    methods:{
+        showPics(){
+            //console.log('ok');
+            var left = document.getElementById('left');
+            var right = document.getElementById('right');
+            left.style.opacity = 0.7;
+            right.style.opacity = 0.7;
+        },
+        concealPics(){
+            //console.log('ok');
+            var left = document.getElementById('left');
+            var right = document.getElementById('right');
+            left.style.opacity = 0;
+            right.style.opacity = 0;
+        },
+        moveLeft(){
+            //alert('ok');
+            var news = document.getElementsByClassName('news');
+         
+            //console.log(news[0].style);
+            var num = this.newsList.length;
+            var dis = num - 4;
+            if(this.leftDis > -450*dis){
+                this.leftDis -= 450;
+                console.log(this.leftDis + 'px')
+                for(let i = 0;i < news.length;i++){
+                    news[i].style.left = this.leftDis + 'px';
+                }
+            }
+            
+        },
+        moveRight(){
+            //alert('ok');
+            var news = document.getElementsByClassName('news');
+         
+            //console.log(news[0].style);
+            var num = this.newsList.length;
+            if(this.leftDis < 0){
+                this.leftDis += 450;
+                console.log(this.leftDis + 'px');
+                console.log(news);
+                for(let i = 0;i < news.length;i++){
+                    news[i].style.left = this.leftDis + 'px';
+                }
+                
+                
+            }
+            
+        }
+    },
+    mounted(){
+        var newsContent = document.getElementById('newsContent');
+        
+            
+        
+    }   
 }
 </script>
 <style scoped>
 .change{
+    width:60px;
+    margin-top:25px;
+    
+}
+#left{
     position:absolute;
     width:100px;
-    height:100px;
-    background-color: red;  
-    
+    height:150px;
+    background-color:black;
+    opacity:0;
+    top:600px; 
+    left:195px; 
+    transition:1s;
+}
+#right{
+    position:absolute;
+    width:100px;
+    height:150px;
+    background-color:black;
+    opacity:0;
+    top:600px; 
+    right:195px;
+    transition:1s;
 }
 .news_date{
     position:absolute;
@@ -92,7 +170,9 @@ export default {
     justify-content: space-between;
     flex-wrap: nowrap;
     overflow:hidden;
-    height:1200px;
+    height:615px;
+    border:1px solid red;
+    margin-top:385px;
 }
 #title{
     position:absolute;
@@ -109,17 +189,19 @@ export default {
     font-size:45px;
 }
 .news{
+    left:0px;
     position:relative;
     float:left;
     height:600px;
     width:400px;
     min-width:400px;
     background-color: rgb(255, 255, 255);
-    margin-top:400px;
+    margin-top:15px;
     margin-right:50px;
     box-shadow: 5px 5px 5px 3px #888888;
     border-radius: 10px;
     transition:all 0.2s linear;
+    /* transition:left 0.5s linear; */
 }
 .news:hover{
     position:relative;
@@ -128,7 +210,7 @@ export default {
     width:400px;
     min-width:400px;
     background-color: rgb(255, 255, 255);
-    margin-top:385px;
+    margin-top:0px;
     margin-right:50px;
     box-shadow: 5px 5px 5px 3px #888888;
     border-radius: 10px;
