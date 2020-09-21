@@ -75,7 +75,7 @@ export default {
             left.style.opacity = 0;
             right.style.opacity = 0;
         },
-        moveLeft(){
+        moveRight(){
             //alert('ok');
             var news = document.getElementsByClassName('news');
          
@@ -91,7 +91,7 @@ export default {
             }
             
         },
-        moveRight(){
+        moveLeft(){
             //alert('ok');
             var news = document.getElementsByClassName('news');
          

@@ -3,8 +3,11 @@
     <div class='header'>
         <myHeader></myHeader>
     </div>
-    <div id='pics'>
-        <img id='pic' src='@/assets/img/pic1.jpg'>
+    <div id='myPic'>
+    <div class='pics' v-for="(item,index) in pics">
+        <img id='pic' :src=item>
+        </div>
+    
     </div>
     <div id='cover'>
         <span id='words'>Your world, we run</span>
@@ -40,7 +43,7 @@ export default {
     },
     mounted(){
         window.addEventListener('scroll',this.scrollToTop);
-        //this.changePic(1000);
+        this.changePic(3000);
     },
     methods:{
         scrollToTop(){
@@ -70,10 +73,11 @@ export default {
             if(this.picNum >= this.pics.length){
                 this.picNum = 0;
             }
-            var pic = document.getElementById('pic');
-            console.log(this.picNum);
-            console.log(this.pics[this.picNum])
-            pic.src = this.pics[this.picNum];
+            var pics = document.getElementsByClassName('pics');
+            for(let i = 0;i < pics.length;i++){
+                pics[i].style.opacity = 0;
+            }
+            pics[this.picNum].style.opacity = 1;
             this.picNum++;
         }
     },
@@ -115,32 +119,42 @@ export default {
     display:flex;
     flex-direction:column;
 }
-#pics{
-    margin-top:-70px;
-    height: 1100px;
+.pics{
+    margin-top:0px;
+    height: 1200px;
     width:100%;
     border:3px solid rgb(47, 20, 202);  
+    position: absolute;
+    transition:1s;
 }
-#pics img{
+
+.pics img{
     width:100%;
-    height:1038px;
+    height:80%;
+}
+#myPic{
+    margin-top:-70px;
+    height: 1000px;
+    width:100%;
+    border:3px solid rgb(2, 78, 40);
 }
 #pic{
     transition: all 0.5s linear;
 }
 #cover{
     margin-top:-1170px;
-    height: 1100px;
+    height: 1140px;
     width:100%;
     border:1px solid rgba(226, 12, 12); 
     background-color: rgba(13,71,161,0.6);
+    z-index:4;
 }
 #words{
     position:absolute;
-    top:30%;
+    top:25%;
     left:50%;
     margin-left:-345px;
-    margin-top:-65px;
+    margin-top:0px;
     width:690px;
     height:150px;
     font-size: 130px;
