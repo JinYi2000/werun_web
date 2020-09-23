@@ -29,6 +29,7 @@
         <joinUs></joinUs>
     </div>
     <div id='footer'>
+        <myFooter></myFooter>
     </div>
 </div>
 </template>
@@ -38,6 +39,7 @@ import latestNews from '@/components/news'
 import fields from '@/components/fields'
 import projects from '@/components/projects'
 import scientificResearch from '@/components/scientificResearch'
+import myFooter from '@/components/footer'
 import joinUs from '@/components/joinUs'
 export default {
     data(){
@@ -63,7 +65,9 @@ export default {
                 var header = document.getElementsByClassName('header'); 
                 var name = header[0].getElementsByClassName('name');
                 var partsName = document.getElementById('partsName');
-                //console.log(partsName);
+                var logo = document.getElementById('logo');
+                //console.log(logo);
+                logo.src = 'https://i.loli.net/2020/09/23/O9CUbHKVoPci7q3.png';
                 partsName.style.color = '#0d3590'
                 header[0].style.backgroundColor = 'white';               
                 name[0].style.color = '#0d3590';           
@@ -72,6 +76,8 @@ export default {
                 var header = document.getElementsByClassName('header');               
                 var name = header[0].getElementsByClassName('name');
                 var partsName = document.getElementById('partsName');
+                var logo = document.getElementById('logo');
+                logo.src = 'https://i.loli.net/2020/09/23/fH9ihPlvUqtZJ1Q.png';
                 partsName.style.color = 'white'
                 header[0].style.backgroundColor = 'transparent';
                 name[0].style.color = 'white';
@@ -95,7 +101,7 @@ export default {
         }
     },
     components:{
-        myHeader,latestNews,fields,projects,scientificResearch,joinUs
+        myHeader,latestNews,fields,projects,scientificResearch,joinUs,myFooter
     }
 }
 </script>
@@ -196,11 +202,13 @@ export default {
     margin-top:200px;
     height: 800px;
     width:100%;
-    
 }
 #footer{
-    height: 300px;
-    width:100%;
+   
+    margin-top:100px;
+    height: 270px;
+    
     border:1px solid rgb(37, 199, 164); 
+    background-color:#0d3590 ;
 }
 </style>

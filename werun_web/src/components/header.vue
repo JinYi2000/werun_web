@@ -1,6 +1,6 @@
 <template>
 <div>
-    <img id='logo' src='@/assets/img/logo-werun.png'>
+    <img id='logo' src='https://i.loli.net/2020/09/23/fH9ihPlvUqtZJ1Q.png'>
     <div class ='name'>
     <span>WERUN</span>
     <br/>

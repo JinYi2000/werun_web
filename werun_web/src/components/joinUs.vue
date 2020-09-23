@@ -6,7 +6,7 @@
         <div id='cover'>
              <span id='title1'>加入我们</span>
              <span id='title2'>诚邀您的加入</span>
-             <span id='title3'>加入我们的团队，与我们一起共享技术之美</span>
+             <span id='title3'>加入我们的团队，与我们一起探索技术之美</span>
              <div id='button'>查看机会</div>
         </div>
     </div>
