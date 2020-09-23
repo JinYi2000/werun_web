@@ -81,7 +81,7 @@ export default {
          
             //console.log(news[0].style);
             var num = this.newsList.length;
-            var dis = num - 4;
+            var dis = num - 3;
             if(this.leftDis > -450*dis){
                 this.leftDis -= 450;
                 console.log(this.leftDis + 'px')
@@ -170,8 +170,8 @@ export default {
     justify-content: space-between;
     flex-wrap: nowrap;
     overflow:hidden;
-    height:615px;
-    border:1px solid red;
+    height:625px;
+    
     margin-top:385px;
 }
 #title{

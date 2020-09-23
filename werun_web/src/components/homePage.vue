@@ -1,5 +1,5 @@
 <template>
-<div id='content'>
+<div id='content' >
     <div class='header'>
         <myHeader></myHeader>
     </div>
@@ -19,8 +19,14 @@
         <fields></fields>
     </div>
     <div id='projects'>
+        <projects></projects>
     </div>
+    <div id='scientificResearch'>
+        <scientificResearch></scientificResearch>
+    </div>
+    
     <div id='joinUs'>
+        <joinUs></joinUs>
     </div>
     <div id='footer'>
     </div>
@@ -30,6 +36,9 @@
 import myHeader from '@/components/header'
 import latestNews from '@/components/news'
 import fields from '@/components/fields'
+import projects from '@/components/projects'
+import scientificResearch from '@/components/scientificResearch'
+import joinUs from '@/components/joinUs'
 export default {
     data(){
         return{
@@ -53,13 +62,17 @@ export default {
             if(dis > 859.5){     
                 var header = document.getElementsByClassName('header'); 
                 var name = header[0].getElementsByClassName('name');
-                //console.log(name[0]);
+                var partsName = document.getElementById('partsName');
+                //console.log(partsName);
+                partsName.style.color = '#0d3590'
                 header[0].style.backgroundColor = 'white';               
-                name[0].style.color = '#0d47a1';           
+                name[0].style.color = '#0d3590';           
             }
             else{              
                 var header = document.getElementsByClassName('header');               
                 var name = header[0].getElementsByClassName('name');
+                var partsName = document.getElementById('partsName');
+                partsName.style.color = 'white'
                 header[0].style.backgroundColor = 'transparent';
                 name[0].style.color = 'white';
                 //console.log(name[0]);              
@@ -82,7 +95,7 @@ export default {
         }
     },
     components:{
-        myHeader,latestNews,fields
+        myHeader,latestNews,fields,projects,scientificResearch,joinUs
     }
 }
 </script>
@@ -90,7 +103,7 @@ export default {
 .header{
     height: 170px;
     width:100%;
-    border:1px solid rgb(182, 51, 123);
+    
     position:fixed;
     top:0px;
     z-index:5;
@@ -100,7 +113,7 @@ export default {
 .header2{
     height: 170px;
     width:100%;
-    border:1px solid rgb(182, 51, 123);
+    
     position:fixed;
     top:0px;
     z-index:5;
@@ -123,7 +136,7 @@ export default {
     margin-top:0px;
     height: 1200px;
     width:100%;
-    border:3px solid rgb(47, 20, 202);  
+    border:3px solid #0d3590;  
     position: absolute;
     transition:1s;
 }
@@ -134,32 +147,32 @@ export default {
 }
 #myPic{
     margin-top:-70px;
-    height: 1000px;
+    height: 1100px;
     width:100%;
     border:3px solid rgb(2, 78, 40);
 }
 #pic{
-    transition: all 0.5s linear;
+    transition: all 1s linear;
 }
 #cover{
     margin-top:-1170px;
-    height: 1140px;
+    height: 1100px;
     width:100%;
     border:1px solid rgba(226, 12, 12); 
-    background-color: rgba(13,71,161,0.6);
+    background-color:rgba(153, 158, 185, 0.8);
     z-index:4;
 }
 #words{
     position:absolute;
-    top:25%;
+    top:29%;
     left:50%;
-    margin-left:-345px;
+    margin-left:-335px;
     margin-top:0px;
-    width:690px;
+    width:600px;
     height:150px;
-    font-size: 130px;
+    font-size: 100px;
     color:white;
-    
+    text-shadow:2px 2px 2px rgb(255, 255, 255);
 }
 #words span{
     opacity: 1 !important;
@@ -168,22 +181,22 @@ export default {
     position:relative;
     height: 1200px;
     width:100%;
-    border:1px solid rgb(228, 191, 28); 
+   
 }
 #fields{
-    height: 1200px;
+    height: 1500px;
     width:100%;
-    border:1px solid rgb(184, 41, 60); 
 }
 #projects{
-    height: 500px;
+    height: 1200px;
     width:100%;
-    border:1px solid rgb(102, 211, 130); 
+    
 }
 #joinUs{
-    height: 500px;
+    margin-top:200px;
+    height: 800px;
     width:100%;
-    border:1px solid rgb(95, 128, 219); 
+    
 }
 #footer{
     height: 300px;

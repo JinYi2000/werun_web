@@ -65,14 +65,14 @@ export default {
   justify-content: space-around;
   flex-wrap: wrap;
   overflow: hidden;
-  height: 1200px;
-  width: 80%;
+  height: 1500px;
+  width: 100%;
   margin: 0 auto;
 }
 #fieldsbody {
   position: relative;
   display: flex;
-  margin-top: 250px;
+  margin-top: 400px;
   margin-left: 300px;
   flex-wrap: wrap;
   width: 100%;
@@ -93,12 +93,14 @@ export default {
   position: relative;
   display: flex;
   width: 50%;
+  margin-top:150px;
   /* background-color: purple; */
 }
 #fieldsbody .forth {
   position: relative;
   display: flex;
   width: 50%;
+  margin-top:150px;
   /* background-color: gray; */
 }
 #fieldsbody .text {
@@ -106,7 +108,8 @@ export default {
   margin-top: 200px;
   margin-left: -30px;
   padding-right: 20%;
-  line-height: 30px;
+  line-height: 40px;
+  font-size: 25px;;
 }
 #fieldsbody img {
   display: block;

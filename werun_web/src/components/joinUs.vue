@@ -1,0 +1,89 @@
+<template>
+    <div>
+           
+            <img src='https://i.loli.net/2020/09/23/jcp4N2mUZWz5eV3.jpg'>
+        
+        <div id='cover'>
+             <span id='title1'>加入我们</span>
+             <span id='title2'>诚邀您的加入</span>
+             <span id='title3'>加入我们的团队，与我们一起共享技术之美</span>
+             <div id='button'>查看机会</div>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    
+}
+</script>
+<style scoped>
+#cover{
+    position:absolute;
+    background-color:rgba(153, 158, 185, 0.8); 
+    margin-left: 195px;
+    margin-right: 195px;
+    height:800px;
+    width:1750px;
+    z-index:3;
+    color:white;
+}
+img{
+    float:left;
+    margin-left: 195px;
+    margin-right: 195px;
+    height:800px;
+    width:1750px;
+    z-index:2;
+}
+#title1{
+    color:white;
+    font-size:50px;
+    left:230px;
+    top:150px;
+    position:absolute;
+    font-weight: bold;
+}
+#title2{
+    color:white;
+    font-size:90px;
+    left:230px;
+    top:220px;
+    position:absolute;
+}
+#title3{
+    color:white;
+    font-size:50px;
+    left:230px;
+    top:380px;
+    position:absolute;
+}
+#button{
+    width:500px;
+    left:230px;
+    top:580px;
+    position:absolute;
+    line-height:80px;
+    height:80px;
+    width:270px;
+    font-size:40px;
+    border:3px solid white;
+    border-radius:20px;
+    color:white;
+    transition:0.5s;
+}
+#button:hover{
+    color:white;
+    background-color: #0d3590;
+    width:500px;
+    left:230px;
+    top:580px;
+    position:absolute;
+    line-height:80px;
+    height:80px;
+    width:270px;
+    font-size:40px;
+    border:3px solid #0d3590;
+    border-radius:20px;
+    font-weight:bold;
+}
+</style>

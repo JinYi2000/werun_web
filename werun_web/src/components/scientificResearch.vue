@@ -1,26 +1,16 @@
 <template>
 <div>
-    <span id='title'>项目展示</span>   
+    <span id='title'>科研成果</span>   
     <span id='more'>更多 ></span>
     <div id='projectsContext'>
-        <div id='nav'>
-            <div class='titles' @click='changeVal(0)'>
-                <span>{{projectsList[0].title}}</span>
-            </div>
-            <div class='titles' @click='changeVal(1)'>
-                <span>{{projectsList[1].title}}</span>
-                </div>
-            <div class='titles' @click='changeVal(2)'>
-                <span>{{projectsList[2].title}}</span>
-            </div>
-            <div class='titles' @click='changeVal(3)'>
-                <span>{{projectsList[3].title}}</span>
-            </div>
+        <div id='titles'>
+            <div class='researches' @click='changeVal(0)'>{{projectsList[0].context}}</div>
+            <div class='researches' @click='changeVal(1)'>{{projectsList[1].context}}</div>
+            <div class='researches' @click='changeVal(2)'>{{projectsList[2].context}}</div>
+            <div class='researches' @click='changeVal(3)'>{{projectsList[3].context}}</div>
         </div>
         <img id='project_pic' :src='projectsList[chosedProject].picSrc'>
-        <div id='detail'>
-            {{projectsList[chosedProject].context}}
-        </div>
+
         
     </div>
 </div>
@@ -32,25 +22,24 @@ export default {
             chosedProject:0,
             projectsList:[
                 {
-                    title:'房合荟',
-                    picSrc:'https://i.loli.net/2020/09/22/v2AF8xskQrI9Yjm.jpg',
-                    context:'实验室为瀚宝公司开发的房地产O2O平台'
+                    picSrc:'https://i.loli.net/2020/09/23/1hf6wYcr2ZyMsvi.png',
+                    context:'针对小文件的二级缓存预取的云存储框架及构建方法'
                 },
                 
                 {
-                    title:'贤得家',
-                    picSrc:'https://i.loli.net/2020/09/22/vLVz5pbIWs8ZiCQ.png',
-                    context:'实验室为瀚宝公司开发的智慧社区平台'
+                    
+                    picSrc:'https://i.loli.net/2020/09/23/RMYdVtFePlWZ9av.jpg',
+                    context:'A method of Text extremum region Extraction based on Joint-Channels'
                 },
                 {
-                    title:'威海市经区警民服务',
-                    picSrc:'https://i.loli.net/2020/09/22/CLHqd1OlxRVXfwj.jpg',
-                    context:'实验室为威海公安开发的警民服务系统'
+                    
+                    picSrc:'https://i.loli.net/2020/09/23/Qx6wHgIWF8P3sTU.jpg',
+                    context:'MMLUP: Multi-source & Multi-task Learning for User Profiles in Social Network'
                 },
                 {
-                    title:'绩效考评系统',
-                    picSrc:'https://i.loli.net/2020/09/22/wIhk1xLySTEMegN.jpg',
-                    context:'实验室为我校开发的教师绩效考评系统'
+                    
+                    picSrc:'https://i.loli.net/2020/09/23/Qx6wHgIWF8P3sTU.jpg',
+                    context:'SNES: Social-network-oriented Public Opinion Monitoring Platform Based on ElasticSearch'
                 },
             ]
         }
@@ -113,14 +102,14 @@ export default {
     },
     watch:{
         chosedProject(){
-            var titles = document.getElementsByClassName('titles');
+            var researches = document.getElementsByClassName('researches');
             //console.log(titles);
             for(let i = 0;i<4;i++){
-                titles[i].style.backgroundColor = 'rgb(250, 250, 250)';
-                titles[i].style.color = 'darkgrey';
+                researches[i].style.borderBottom = '5px solid gray';
+                researches[i].style.color = 'gray';
             }
-            titles[this.chosedProject].style.backgroundColor = '#0d3590';
-            titles[this.chosedProject].style.color = 'white';
+            researches[this.chosedProject].style.borderBottom = '5px solid #0d3590';
+            researches[this.chosedProject].style.color = '#0d3590';
         }
     }
 }
@@ -128,13 +117,13 @@ export default {
 <style scoped>
 #project_pic{
     float:right;
-    width:360px;
+    width:400px;
     height:640px;
-    transition:all 0.5s;
+    transition:all 0.5s linear;
 }
 #title{
     position:absolute;
-    top:3900px;
+    top:5000px;
     left:195px;
     color:#455a64;
     font-size:45px;
@@ -151,63 +140,55 @@ export default {
     margin-right:185px;
     margin-left:195px;
     height:645px;
-    margin-top:385px;
+    margin-top:285px;
+   
 }
-#nav{
-    width:400px;
-    height:600px;
-    
+#titles{
+    width:calc(100% - 430px);    
+    height:645px;
+   
     float:left;
+    display: flex;
+    flex-wrap: wrap;
 }
-.titles{
-    width:400px;
-    height:150px;
-    
-    margin-bottom:10px;
-    background-color: rgb(250, 250, 250);
-    font-size:35px;
-    font-weight: bold;
-    color:darkgrey;
-    line-height:150px;   
-    align-self:center;
-    text-align: center;
-    transition:all 0.5s;
-}
-.titles:nth-child(1){
-    width:400px;
-    height:150px;
-    
-    margin-bottom:10px;
-    background-color:#0d3590 ;
-    font-size:35px;
-    font-weight: bold;
-    color:white;
-    line-height:150px;   
-    align-self:center;
-    text-align: center;
-    transition:all 0.5s;
-}
-.titles:hover{
-    width:400px;
-    height:150px;
-    margin-bottom:10px;
-    background-color: rgb(250, 250, 250);
-    font-size:35px;
-    font-weight: bold;
-    line-height:150px;   
-    align-self:center;
-    text-align: center;
+.researches:nth-child(1){
+    flex:0 0 40%;
+    display:inline-block;
+    margin-top:50px;
+    height:250px;
+    border-bottom:5px solid #0d3590;
+    margin-left:5%;
+    margin-right:5%;
+    font-size: 40px;
+    text-align: left;
     color:#0d3590;
+    font-weight: bold;
 }
-
-#detail{
-    font-size:25px;
-    background-color: #0d3590;
-    line-height:630px;
-    height:643px;
-    margin-left:410px;
-    margin-right:370px;
-    color:white;
-    transition:all 0.5s;
+.researches{
+    flex:0 0 40%;
+    display:inline-block;
+    margin-top:50px;
+    height:250px;
+    border-bottom:5px solid gray;
+    margin-left:5%;
+    margin-right:5%;
+    font-size: 40px;
+    text-align: left;
+    color:grey;
+    font-weight: bold;
+    transition:all 0.5s ease;
+}
+.researches:hover{
+    flex:0 0 40%;
+    display:inline-block;
+    margin-top:50px;
+    height:250px;
+    border-bottom:5px solid #0d3590;
+    margin-left:5%;
+    margin-right:5%;
+    font-size: 40px;
+    text-align: left;
+    color:#0d3590;
+    font-weight: bold;
 }
 </style>
