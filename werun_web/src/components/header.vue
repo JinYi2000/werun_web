@@ -44,7 +44,7 @@ export default {
 #partsName{
     float:right;
     margin-right:195px;
-    line-height:200px;
+    line-height:220px;
     color:#eceff1;
 }
 #partsName span{

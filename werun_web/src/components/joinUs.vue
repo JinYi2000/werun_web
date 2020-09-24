@@ -23,7 +23,7 @@ export default {
     margin-left: 195px;
     margin-right: 195px;
     height:800px;
-    width:1750px;
+    width:calc(100% - 405px);
     z-index:3;
     color:white;
 }
@@ -32,7 +32,7 @@ img{
     margin-left: 195px;
     margin-right: 195px;
     height:800px;
-    width:1750px;
+    width:calc(100% - 390px);
     z-index:2;
 }
 #title1{

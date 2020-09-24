@@ -24,10 +24,12 @@
     <div id='scientificResearch'>
         <scientificResearch></scientificResearch>
     </div>
-    
+    <div id='ourTeam'>
+        <ourTeam></ourTeam>
+    </div>
     <div id='joinUs'>
         <joinUs></joinUs>
-    </div>
+    </div> 
     <div id='footer'>
         <myFooter></myFooter>
     </div>
@@ -41,6 +43,7 @@ import projects from '@/components/projects'
 import scientificResearch from '@/components/scientificResearch'
 import myFooter from '@/components/footer'
 import joinUs from '@/components/joinUs'
+import ourTeam from '@/components/ourTeam'
 export default {
     data(){
         return{
@@ -101,7 +104,7 @@ export default {
         }
     },
     components:{
-        myHeader,latestNews,fields,projects,scientificResearch,joinUs,myFooter
+        myHeader,latestNews,fields,projects,scientificResearch,joinUs,myFooter,ourTeam
     }
 }
 </script>
@@ -109,17 +112,14 @@ export default {
 .header{
     height: 170px;
     width:100%;
-    
     position:fixed;
     top:0px;
     z-index:5;
     transition: background-color 0.5s linear
-
 }
 .header2{
     height: 170px;
     width:100%;
-    
     position:fixed;
     top:0px;
     z-index:5;
@@ -142,35 +142,35 @@ export default {
     margin-top:0px;
     height: 1200px;
     width:100%;
-    border:3px solid #0d3590;  
+    /* border:3px solid #0d3590; */  
     position: absolute;
     transition:1s;
 }
 
 .pics img{
     width:100%;
-    height:80%;
+    height:100%;
 }
 #myPic{
     margin-top:-70px;
     height: 1100px;
     width:100%;
-    border:3px solid rgb(2, 78, 40);
+    /* border:3px solid rgb(2, 78, 40); */
 }
-#pic{
+#pic{ 
     transition: all 1s linear;
 }
 #cover{
-    margin-top:-1170px;
-    height: 1100px;
-    width:100%;
-    border:1px solid rgba(226, 12, 12); 
-    background-color:rgba(153, 158, 185, 0.8);
+    margin-top:-1100px;
+    height: 1200px;
+    width:101%;
+    /* border:1px solid rgba(226, 12, 12);  */
+    background-color:rgba(153, 158, 185, 0.6);
     z-index:4;
 }
 #words{
     position:absolute;
-    top:29%;
+    top:450px;
     left:50%;
     margin-left:-335px;
     margin-top:0px;

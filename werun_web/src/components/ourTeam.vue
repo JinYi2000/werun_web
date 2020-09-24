@@ -1,18 +1,21 @@
 <template>
 <div>
-    <span id='title'>最新动态</span>
+    <span id='title'>团队成员</span>
     <div id='newsContent'  @mouseover="showPics()" @mouseout="concealPics()">
         <div class='news' v-for="(item,key) in newsList">
-            <img class='news_img' :src='item.picSrc'>
-            <span class='news_title'>{{item.title}}</span>
-            <span class='news_date'>{{item.date}}</span>
+            <img class='news_img' :src='item.img'>
+            <span class='news_title'>{{item.name}}</span>
+            
+            <span class='description'>{{item.grade}}</span>
+            <span class='description'>{{item.major}}</span>
+            <span class='description'>{{item.dir}}</span>
         </div>
     </div>
     <span id='more'>更多 ></span>
-    <div id='left2'  @mouseover="showPics()" @mouseout="concealPics()">
+    <div id='left'  @mouseover="showPics()" @mouseout="concealPics()">
         <img @click="moveLeft()" class='change' src='@/assets/img/左.png'>
     </div>
-    <div id='right2' @click="moveRight()" @mouseover="showPics()" @mouseout="concealPics()">
+    <div id='right' @click="moveRight()" @mouseover="showPics()" @mouseout="concealPics()">
         <img class='change' src='@/assets/img/右.png'>
     </div>
 </div>
@@ -22,49 +25,28 @@ export default {
     data(){
         return{
             leftDis:0,
-            newsList:[
-                {
-                    title:'2016级舒钰博同学论文发表于JCR 1区杂志 CMC-Computers Materials & Continua',
-                    picSrc:'https://i.loli.net/2020/09/18/57uEnyzQJaI4HPA.jpg',
-                    date:'Sep 02'
-                },
-                
-                {
-                    title:'2015级刘海青和章江山同学参与的发明专利获得授权',
-                    picSrc:'https://i.loli.net/2020/09/18/NcQ4zFASxibyuM9.jpg',
-                    date:'Sep 02'
-                },
-                {
-                    title:'2016级林春旭，2017级郭振豪、孙一恒同学论文被国际学术会议ICAIS接收',
-                    picSrc:'https://i.loli.net/2020/09/18/ePMsrQjTFmt3yu6.jpg',
-                    date:'Sep 02'
-                },
-                {
-                    title:'2016级舒钰博同学论文发表于JCR 1区杂志 CMC-Computers Materials & Continua',
-                    picSrc:'https://i.loli.net/2020/09/18/57uEnyzQJaI4HPA.jpg',
-                    date:'Sep 02'
-                },
-                
-                {
-                    title:'2015级刘海青和章江山同学参与的发明专利获得授权',
-                    picSrc:'https://i.loli.net/2020/09/18/NcQ4zFASxibyuM9.jpg',
-                    date:'Sep 02'
-                },
-                {
-                    title:'2016级林春旭，2017级郭振豪、孙一恒同学论文被国际学术会议ICAIS接收',
-                    picSrc:'https://i.loli.net/2020/09/18/ePMsrQjTFmt3yu6.jpg',
-                    date:'Sep 02'
-                },
-                
-                
-            ]
+            newsList:[ { img: 'https://i.loli.net/2020/09/24/XYgTzaldxZJksu2.jpg',
+             name: '孙一恒',
+              grade: '2017',
+               major: '软件工程', dir: '后端' },
+            { img: 'https://i.loli.net/2020/09/24/uNwtjIHARCJKo9r.jpg', name: '鹿轶轩', grade: '2018', major: '软件工程', dir: '后端' },
+            { img: 'https://i.loli.net/2020/09/24/WH32b5Y1BxUO9jG.jpg', name: '莫张浩', grade: '2018', major: '计算机科学与技术', dir: '前端' },
+            { img: 'https://i.loli.net/2020/09/24/3bTWSMKkhIFVENv.jpg', name: '刘俊良', grade: '2018', major: '软件工程', dir: '后端' }
+            ,{ img: 'https://i.loli.net/2020/09/24/XYgTzaldxZJksu2.jpg',
+             name: '孙一恒',
+              grade: '2017',
+               major: '软件工程', dir: '后端' },
+            { img: 'https://i.loli.net/2020/09/24/uNwtjIHARCJKo9r.jpg', name: '鹿轶轩', grade: '2018', major: '软件工程', dir: '后端' },
+            { img: 'https://i.loli.net/2020/09/24/WH32b5Y1BxUO9jG.jpg', name: '莫张浩', grade: '2018', major: '计算机科学与技术', dir: '前端' },
+            { img: 'https://i.loli.net/2020/09/24/3bTWSMKkhIFVENv.jpg', name: '刘俊良', grade: '2018', major: '软件工程', dir: '后端' } ]
         }
     },
     methods:{
         showPics(){
             //console.log('ok');
-            var left = document.getElementById('left2');
-            var right = document.getElementById('right2');
+            var left = document.getElementById('left');
+            var right = document.getElementById('right');
+            //console.log(left);
             left.style.opacity = 0.7;
             right.style.opacity = 0.7;
         },
@@ -104,16 +86,12 @@ export default {
                 for(let i = 0;i < news.length;i++){
                     news[i].style.left = this.leftDis + 'px';
                 }
+                
+                
             }
             
         }
     },
-    mounted(){
-        var newsContent = document.getElementById('newsContent');
-        
-            
-        
-    }   
 }
 </script>
 <style scoped>
@@ -122,23 +100,23 @@ export default {
     margin-top:25px;
     
 }
-#left2{
+#left{
     position:absolute;
     width:100px;
     height:150px;
     background-color:black;
     opacity:0;
-    top:600px; 
+    top:6650px; 
     left:195px; 
     transition:1s;
 }
-#right2{
+#right{
     position:absolute;
     width:100px;
     height:150px;
     background-color:black;
     opacity:0;
-    top:600px; 
+    top:6650px; 
     right:195px;
     transition:1s;
 }
@@ -153,14 +131,22 @@ export default {
 .news_img{
     width:400px;
     height:300px;
+    
 }
 .news_title{
-    display:inline-block;
-    text-align: left;
+    display:block;
+    text-align: center;
     margin:20px;
+    margin-bottom:50px;
     font-weight:bold;
     font-size:27px;
-    
+}
+.description{
+    display:block;
+    text-align: center;
+    margin:20px;
+    font-size:23px;
+    color:#888888;
 }
 #newsContent{
     margin-left:195px;
@@ -174,14 +160,14 @@ export default {
 }
 #title{
     position:absolute;
-    top:170px;
+    top:6200px;
     left:195px;
     color:#455a64;
     font-size:45px;
 }
 #more{
     position:absolute;
-    top:170px;
+    top:6200px;
     right:195px;
     color:#455a64;
     font-size:45px;
@@ -190,7 +176,7 @@ export default {
     left:0px;
     position:relative;
     float:left;
-    height:600px;
+    height:580px;
     width:400px;
     min-width:400px;
     background-color: rgb(255, 255, 255);
