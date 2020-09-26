@@ -70,8 +70,8 @@ export default {
         },
         concealPics(){
             //console.log('ok');
-            var left = document.getElementById('left');
-            var right = document.getElementById('right');
+            var left = document.getElementById('left2');
+            var right = document.getElementById('right2');
             left.style.opacity = 0;
             right.style.opacity = 0;
         },

@@ -5,7 +5,7 @@
     </div>
     <div id='myPic'>
     <div class='pics' v-for="(item,index) in pics">
-        <img id='pic' :src=item>
+        <img :id="picId(index)" >
         </div>
     
     </div>
@@ -52,14 +52,83 @@ export default {
                 'https://i.loli.net/2020/09/18/83UTGFNXZAqI4fj.jpg',
                 'https://i.loli.net/2020/09/18/kiNqcVYyZlTdvRC.jpg',
                 'https://i.loli.net/2020/09/18/JGKym8zxdevYuj5.jpg'],
-            picNum:0,
+            picNum:0,//当前选中的图片
+            picNums:0,//当前加载好的图片数量
         }       
     },
     mounted(){
         window.addEventListener('scroll',this.scrollToTop);
         this.changePic(3000);
+        
+        this.loadPics();
     },
     methods:{
+        picId(index){
+            return 'pic' + index;
+        },
+        loadPic(index){
+            //console.log(index);
+            return new Promise((resolve,reject)=>{
+                var theId = 'pic' + index;
+                var pic = document.getElementById(theId);
+                pic.src = this.pics[index - 1];
+                console.log(pic);
+                pic.onload = ()=>{
+                    this.picNums++;
+                    console.log('ok');
+                    resolve(index + 1);
+                }
+            })
+        },
+        loadPics(){
+            this.loadPic(1).then((res)=>{
+                console.log(res);
+                return this.loadPic(res);
+            }).then((res)=>{
+                console.log(res);
+                return this.loadPic(res);
+            }).then((res)=>{
+                console.log(res);
+                return this.loadPic(res);
+            }).then((res)=>{
+                console.log(res);
+                return this.loadPic(res);
+            })
+            /* var pics = new Promise((resolve,reject)=>{
+                console.log(this.getPic(1).complete);
+                if(this.getPic(1).complete == 0){
+                    //console.log('ok');
+                    this.picNums ++;
+                    //console.log('ok');
+                    resolve(1);
+                }
+            })
+            pics.then((res)=>{
+                console.log(res);
+                while(this.getPic(2).complete === true){
+                    this.picNums ++;
+                    resolve(2);
+                }
+            }).then((res)=>{
+                console.log(res);
+                while(this.getPic(3).complete === true){
+                    this.picNums ++;
+                    resolve(3);
+                }
+            }).then((res)=>{
+                console.log(res);
+                while(this.getPic(4).complete === true){
+                    this.picNums ++;
+                    resolve(4);
+                }
+            }).then(res=>{
+                console.log(res);
+                while(this.getPic(5).complete === true){
+                    this.picNums ++;
+                    resolve(5);
+                }
+            })
+        },
         scrollToTop(){
             var dis = window.pageYOffset;
             //console.log(dis);
@@ -85,18 +154,18 @@ export default {
                 header[0].style.backgroundColor = 'transparent';
                 name[0].style.color = 'white';
                 //console.log(name[0]);              
-            }
+            } */
         },
         changePic(interval){      
             setInterval(this.changePic2,interval);
         },
         changePic2(){
             //console.log(this);
-            if(this.picNum >= this.pics.length){
+            if(this.picNum >= this.picNums){
                 this.picNum = 0;
             }
             var pics = document.getElementsByClassName('pics');
-            for(let i = 0;i < pics.length;i++){
+            for(let i = 0;i < this.picNums;i++){
                 pics[i].style.opacity = 0;
             }
             pics[this.picNum].style.opacity = 1;
@@ -194,6 +263,7 @@ export default {
     width:100%;
 }
 #projects{
+    margin-top:100px;
     height: 1200px;
     width:100%;
     

@@ -129,7 +129,7 @@ export default {
     font-weight:bold;
 }
 .news_img{
-    width:400px;
+    width:370px;
     height:300px;
     
 }
@@ -160,14 +160,14 @@ export default {
 }
 #title{
     position:absolute;
-    top:6200px;
+    top:6300px;
     left:195px;
     color:#455a64;
     font-size:45px;
 }
 #more{
     position:absolute;
-    top:6200px;
+    top:6300px;
     right:195px;
     color:#455a64;
     font-size:45px;
@@ -177,8 +177,8 @@ export default {
     position:relative;
     float:left;
     height:580px;
-    width:400px;
-    min-width:400px;
+    width:350px;
+    min-width:370px;
     background-color: rgb(255, 255, 255);
     margin-top:15px;
     margin-right:50px;
@@ -191,8 +191,8 @@ export default {
     position:relative;
     float:left;
     height:600px;
-    width:400px;
-    min-width:400px;
+    width:370px;
+    min-width:370px;
     background-color: rgb(255, 255, 255);
     margin-top:0px;
     margin-right:50px;

@@ -11,6 +11,8 @@
         <span>研究方向</span>
         <span>项目展示</span>
         <span>科研成果</span>
+        <span>团队成员</span>
+        <span>加入我们</span>
     </div>
 </div>
 </template>

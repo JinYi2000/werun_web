@@ -123,14 +123,14 @@ export default {
 }
 #title{
     position:absolute;
-    top:5000px;
+    top:5200px;
     left:195px;
     color:#455a64;
     font-size:45px;
 }
 #more{
     position:absolute;
-    top:3900px;
+    top:5200px;
     right:195px;
     color:#455a64;
     font-size:45px;

@@ -55,7 +55,7 @@ export default {
   position: absolute;
   z-index: 1;
   top: 100px;
-  left: 195px;
+  left: 0px;
   color: #455a64;
   font-size: 45px;
 }
@@ -66,8 +66,10 @@ export default {
   flex-wrap: wrap;
   overflow: hidden;
   height: 1500px;
-  width: 100%;
-  margin: 0 auto;
+  
+  
+  margin-left:195px;
+  margin-right:195px;
 }
 #fieldsbody {
   position: relative;
