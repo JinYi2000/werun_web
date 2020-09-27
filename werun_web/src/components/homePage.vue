@@ -100,43 +100,15 @@ export default {
                 console.log(res);
                 return this.loadPic(res);
             })
-            /* var pics = new Promise((resolve,reject)=>{
-                console.log(this.getPic(1).complete);
-                if(this.getPic(1).complete == 0){
-                    //console.log('ok');
-                    this.picNums ++;
-                    //console.log('ok');
-                    resolve(1);
-                }
-            })
-            pics.then((res)=>{
-                console.log(res);
-                while(this.getPic(2).complete === true){
-                    this.picNums ++;
-                    resolve(2);
-                }
-            }).then((res)=>{
-                console.log(res);
-                while(this.getPic(3).complete === true){
-                    this.picNums ++;
-                    resolve(3);
-                }
-            }).then((res)=>{
-                console.log(res);
-                while(this.getPic(4).complete === true){
-                    this.picNums ++;
-                    resolve(4);
-                }
-            }).then(res=>{
-                console.log(res);
-                while(this.getPic(5).complete === true){
-                    this.picNums ++;
-                    resolve(5);
-                }
-            })*/
         },
         scrollToTop(){
             var dis = window.pageYOffset;
+            //console.log(dis);
+            var joinUs = document.getElementById('joinUs');
+            if(dis > 4500){
+                var joinUs_img = document.getElementById('joinUs_img');
+                joinUs_img.src = 'https://i.loli.net/2020/09/23/jcp4N2mUZWz5eV3.jpg';
+            }
             //console.log(dis);
             //this.changePic();
             if(dis > 859.5){     

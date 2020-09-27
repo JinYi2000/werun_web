@@ -5,7 +5,6 @@
         <div class='news' v-for="(item,key) in newsList">
             <img class='news_img' :src='item.img'>
             <span class='news_title'>{{item.name}}</span>
-            
             <span class='description'>{{item.grade}}</span>
             <span class='description'>{{item.major}}</span>
             <span class='description'>{{item.dir}}</span>

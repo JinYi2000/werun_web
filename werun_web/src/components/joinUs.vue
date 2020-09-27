@@ -1,7 +1,7 @@
 <template>
     <div>
            
-            <img src='https://i.loli.net/2020/09/23/jcp4N2mUZWz5eV3.jpg'>
+            <img id='joinUs_img' src=''>
         
         <div id='cover'>
              <span id='title1'>加入我们</span>
