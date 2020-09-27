@@ -69,19 +69,25 @@ export default {
         loadPic(index){
             //console.log(index);
             return new Promise((resolve,reject)=>{
+                
                 var theId = 'pic' + index;
                 var pic = document.getElementById(theId);
-                pic.src = this.pics[index - 1];
+                pic.src = this.pics[index];
+                pic.style.opacity = 0;
                 console.log(pic);
                 pic.onload = ()=>{
-                    this.picNums++;
+                    setTimeout(() => {
+                        pic.style.opacity = 1;
+                    }, 3000);
+                    
                     console.log('ok');
+                    this.picNums++;
                     resolve(index + 1);
                 }
             })
         },
         loadPics(){
-            this.loadPic(1).then((res)=>{
+            this.loadPic(0).then((res)=>{
                 console.log(res);
                 return this.loadPic(res);
             }).then((res)=>{
@@ -127,7 +133,7 @@ export default {
                     this.picNums ++;
                     resolve(5);
                 }
-            })
+            })*/
         },
         scrollToTop(){
             var dis = window.pageYOffset;
@@ -154,14 +160,14 @@ export default {
                 header[0].style.backgroundColor = 'transparent';
                 name[0].style.color = 'white';
                 //console.log(name[0]);              
-            } */
+            } 
         },
         changePic(interval){      
             setInterval(this.changePic2,interval);
         },
         changePic2(){
             //console.log(this);
-            if(this.picNum >= this.picNums){
+            if(this.picNum >= this.picNums - 1){
                 this.picNum = 0;
             }
             var pics = document.getElementsByClassName('pics');
