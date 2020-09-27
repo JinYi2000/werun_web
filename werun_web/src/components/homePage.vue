@@ -6,8 +6,7 @@
     <div id='myPic'>
     <div class='pics' v-for="(item,index) in pics">
         <img :id="picId(index)" >
-        </div>
-    
+    </div>
     </div>
     <div id='cover'>
         <span id='words'>Your world, we run</span>
@@ -48,21 +47,46 @@ export default {
     data(){
         return{
             pics:['https://i.loli.net/2020/09/18/Nhb4kPpRyqSFKvo.jpg',
-                'https://i.loli.net/2020/09/18/NjPhxZG7mYElct1.jpg',
-                'https://i.loli.net/2020/09/18/83UTGFNXZAqI4fj.jpg',
-                'https://i.loli.net/2020/09/18/kiNqcVYyZlTdvRC.jpg',
-                'https://i.loli.net/2020/09/18/JGKym8zxdevYuj5.jpg'],
+                'https://i.loli.net/2020/09/27/RtaveiXDTLlm9CG.jpg',
+                'https://i.loli.net/2020/09/27/Spi7tWgye6jGEKT.jpg',               
+                'https://i.loli.net/2020/09/27/MARlCZQq1przIsV.jpg',
+                'https://i.loli.net/2020/09/27/Kyuwxb13BV9SLTk.jpg'],
             picNum:0,//当前选中的图片
             picNums:0,//当前加载好的图片数量
         }       
     },
     mounted(){
+        this.reSize();
         window.addEventListener('scroll',this.scrollToTop);
+        const self = this;
+        window.onresize = function(){
+            //console.log('ok');
+            self.reSize();
+        };
         this.changePic(3000);
         
         this.loadPics();
     },
     methods:{
+        reSize(){
+            var width = document.body.clientWidth;
+            var height = width/1.8;
+            for(let i = 0;i<this.pics.length;i++){
+                var pic = document.getElementById(this.picId(i));
+                pic.style.height = height + 'px';
+                //onsole.log(pic.style.height);
+            }
+            var cover = document.getElementById('cover');
+            cover.style.height = height + 'px';
+            var myPic = document.getElementById('myPic');
+            myPic.style.height = height + 'px';
+            var img = document.getElementById('joinUs_img');
+            img.style.height = (img.width)/2.2 + 'px';
+            var cover2 = document.getElementById('cover2');
+            cover2.style.height = (img.width)/2.2 + 'px';
+            var joinUs = document.getElementById('joinUs');
+            joinUs.style.height = (img.width)/2.2 + 'px';
+        },
         picId(index){
             return 'pic' + index;
         },
@@ -182,12 +206,13 @@ export default {
 }
 
 #content{
+    height:1;
     display:flex;
     flex-direction:column;
 }
 .pics{
     margin-top:0px;
-    height: 1200px;
+    /* height: 1200px; */
     width:100%;
     /* border:3px solid #0d3590; */  
     position: absolute;
@@ -196,31 +221,33 @@ export default {
 
 .pics img{
     width:100%;
-    height:100%;
+    height:1200px;
 }
 #myPic{
-    margin-top:-70px;
-    height: 1100px;
+    margin-top:0px;
+    height:1200px;
     width:100%;
-    /* border:3px solid rgb(2, 78, 40); */
 }
 #pic{ 
     transition: all 1s linear;
 }
 #cover{
-    margin-top:-1100px;
-    height: 1200px;
-    width:101%;
+    position:absolute;
+    left:0px;
+    top:0px;
+    margin-top:0;
+    height:1200px;
+    width:100%;
     /* border:1px solid rgba(226, 12, 12);  */
     background-color:rgba(153, 158, 185, 0.6);
     z-index:4;
 }
 #words{
     position:absolute;
-    top:450px;
+    top:45%;
     left:50%;
     margin-left:-335px;
-    margin-top:0px;
+    margin-top:-75px;
     width:600px;
     height:150px;
     font-size: 100px;

@@ -3,7 +3,7 @@
            
             <img id='joinUs_img' src=''>
         
-        <div id='cover'>
+        <div id='cover2'>
              <span id='title1'>加入我们</span>
              <span id='title2'>诚邀您的加入</span>
              <span id='title3'>加入我们的团队，与我们一起探索技术之美</span>
@@ -17,13 +17,13 @@ export default {
 }
 </script>
 <style scoped>
-#cover{
+#cover2{
     position:absolute;
     background-color:rgba(153, 158, 185, 0.8); 
     margin-left: 195px;
     margin-right: 195px;
     height:800px;
-    width:calc(100% - 405px);
+    width:calc(100% - 390px);
     z-index:3;
     color:white;
 }
