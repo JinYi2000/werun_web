@@ -43,6 +43,7 @@ import scientificResearch from '@/components/scientificResearch'
 import myFooter from '@/components/footer'
 import joinUs from '@/components/joinUs'
 import ourTeam from '@/components/ourTeam'
+import {debounce,throttle} from './debounce_throttle'
 export default {
     data(){
         return{
@@ -57,18 +58,32 @@ export default {
     },
     mounted(){
         this.reSize();
-        window.addEventListener('scroll',this.scrollToTop);
+        var scrollTro = this.scroll_throttle();
+        window.addEventListener('scroll',scrollTro);
         const self = this;
+        var sizeChanged = this.debounce_reSize();
         window.onresize = function(){
-            //console.log('ok');
-            self.reSize();
+            sizeChanged();
         };
         this.changePic(3000);
         
         this.loadPics();
     },
     methods:{
+        debounce_reSize(){
+            var timer = null;
+            const self = this;
+            return function(){
+                if(timer){
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(() => {
+                self.reSize(); 
+                }, 500);
+            }  
+        },
         reSize(){
+            //console.log('ok');
             var width = document.body.clientWidth;
             var height = width/1.8;
             for(let i = 0;i<this.pics.length;i++){
@@ -98,13 +113,13 @@ export default {
                 var pic = document.getElementById(theId);
                 pic.src = this.pics[index];
                 pic.style.opacity = 0;
-                console.log(pic);
+                /* console.log(pic); */
                 pic.onload = ()=>{
                     setTimeout(() => {
                         pic.style.opacity = 1;
                     }, 3000);
                     
-                    console.log('ok');
+                    //console.log('ok');
                     this.picNums++;
                     resolve(index + 1);
                 }
@@ -112,20 +127,33 @@ export default {
         },
         loadPics(){
             this.loadPic(0).then((res)=>{
-                console.log(res);
+                
                 return this.loadPic(res);
             }).then((res)=>{
-                console.log(res);
+                
                 return this.loadPic(res);
             }).then((res)=>{
-                console.log(res);
+               
                 return this.loadPic(res);
             }).then((res)=>{
-                console.log(res);
+               
                 return this.loadPic(res);
             })
         },
+        scroll_throttle(){
+            var lastTime = null;
+            const self = this;
+            return function(){
+                var thisTime = Date.now();
+                console.log(thisTime);
+                if(!lastTime || thisTime - lastTime > 700){
+                    lastTime = thisTime;
+                    self.scrollToTop();
+                }
+            }
+        },
         scrollToTop(){
+            console.log('throttle');
             var dis = window.pageYOffset;
             //console.log(dis);
             var joinUs = document.getElementById('joinUs');

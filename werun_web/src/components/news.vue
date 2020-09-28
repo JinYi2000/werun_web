@@ -2,7 +2,7 @@
 <div>
     <span id='title'>最新动态</span>
     <div id='newsContent'  @mouseover="showPics()" @mouseout="concealPics()">
-        <div class='news' v-for="(item,key) in newsList">
+        <div class='news' v-for="(item,key) in newsList" @click="viewDetail()">
             <img class='news_img' :src='item.picSrc'>
             <span class='news_title'>{{item.title}}</span>
             <span class='news_date'>{{item.date}}</span>
@@ -61,6 +61,9 @@ export default {
         }
     },
     methods:{
+        viewDetail(){
+            this.$router.push('newsDetail');
+        },
         showPics(){
             //console.log('ok');
             var left = document.getElementById('left2');
