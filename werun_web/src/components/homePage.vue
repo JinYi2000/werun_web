@@ -142,20 +142,33 @@ export default {
                 return this.loadPic(res);
             })
         },
+        ifShow(){
+            var url = window.location.hash;
+            //console.log(url);
+            if(url == '#/'){
+                return true;
+            }
+            else{
+                return false;
+            }
+        },
         scroll_throttle(){
             var lastTime = null;
             const self = this;
             return function(){
                 var thisTime = Date.now();
-                console.log(thisTime);
+                //console.log(thisTime);
                 if(!lastTime || thisTime - lastTime > 700){
                     lastTime = thisTime;
-                    self.scrollToTop();
+                    if(self.ifShow()){
+                        self.scrollToTop();
+                    }
+                    
                 }
             }
         },
         scrollToTop(){
-            console.log('throttle');
+            //console.log('throttle');
             var dis = window.pageYOffset;
             //console.log(dis);
             var joinUs = document.getElementById('joinUs');
@@ -188,8 +201,10 @@ export default {
                 //console.log(name[0]);              
             } 
         },
-        changePic(interval){      
-            setInterval(this.changePic2,interval);
+        changePic(interval){  
+            if(this.ifShow()){
+                setInterval(this.changePic2,interval);
+            }    
         },
         changePic2(){
             //console.log(this);

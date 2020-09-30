@@ -2,7 +2,7 @@
 <div style='position:relative'>
     <span id='title'>团队成员</span>
     <div id='newsContent'  @mouseover="showPics()" @mouseout="concealPics()">
-        <div class='news' v-for="(item,key) in newsList">
+        <div class='news' v-for="(item,key) in newsList" @click="viewDetail()">
             <img class='news_img' :src='item.img'>
             <span class='news_title'>{{item.name}}</span>
             <span class='description'>{{item.grade}}</span>
@@ -41,6 +41,9 @@ export default {
         }
     },
     methods:{
+        viewDetail(){
+            this.$router.push('teamDetail');
+        },
         showPics(){
             //console.log('ok');
             var left = document.getElementById('left');
