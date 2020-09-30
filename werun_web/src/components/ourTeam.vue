@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style='position:relative'>
     <span id='title'>团队成员</span>
     <div id='newsContent'  @mouseover="showPics()" @mouseout="concealPics()">
         <div class='news' v-for="(item,key) in newsList">
@@ -105,7 +105,7 @@ export default {
     height:150px;
     background-color:black;
     opacity:0;
-    top:6650px; 
+    top:200px; 
     left:195px; 
     transition:1s;
 }
@@ -115,7 +115,7 @@ export default {
     height:150px;
     background-color:black;
     opacity:0;
-    top:6650px; 
+    top:200px; 
     right:195px;
     transition:1s;
 }
@@ -159,14 +159,14 @@ export default {
 }
 #title{
     position:absolute;
-    top:6300px;
+    top:-250px;
     left:195px;
     color:#455a64;
     font-size:45px;
 }
 #more{
     position:absolute;
-    top:6300px;
+    top:-250px;
     right:195px;
     color:#455a64;
     font-size:45px;

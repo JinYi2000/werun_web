@@ -58,6 +58,7 @@ export default {
   left: 0px;
   color: #455a64;
   font-size: 45px;
+  margin-left: 195px;
 }
 #fieldsContent {
   position: relative;
@@ -68,7 +69,7 @@ export default {
   height: 1500px;
   
   
-  margin-left:195px;
+  
   margin-right:195px;
 }
 #fieldsbody {

@@ -39,7 +39,7 @@ img{
     color:white;
     font-size:50px;
     left:230px;
-    top:150px;
+    margin-top:7vw;
     position:absolute;
     font-weight: bold;
 }
@@ -47,20 +47,20 @@ img{
     color:white;
     font-size:90px;
     left:230px;
-    top:220px;
+    margin-top:10vw;
     position:absolute;
 }
 #title3{
     color:white;
     font-size:50px;
     left:230px;
-    top:380px;
+    top:16vw;
     position:absolute;
 }
 #button{
     width:500px;
     left:230px;
-    top:580px;
+    top:25vw;
     position:absolute;
     line-height:80px;
     height:80px;
@@ -76,7 +76,7 @@ img{
     background-color: #0d3590;
     width:500px;
     left:230px;
-    top:580px;
+    top:25vw;
     position:absolute;
     line-height:80px;
     height:80px;

@@ -101,6 +101,8 @@ export default {
             cover2.style.height = (img.width)/2.2 + 'px';
             var joinUs = document.getElementById('joinUs');
             joinUs.style.height = (img.width)/2.2 + 'px';
+            let WIDTH = 1440;
+            //document.documentElement.style.fontSize = (100*document.body.clientWidth)/WIDTH + 'px';
         },
         picId(index){
             return 'pic' + index;
@@ -117,7 +119,7 @@ export default {
                 pic.onload = ()=>{
                     setTimeout(() => {
                         pic.style.opacity = 1;
-                    }, 3000);
+                    }, 300);
                     
                     //console.log('ok');
                     this.picNums++;
@@ -237,6 +239,7 @@ export default {
     height:1;
     display:flex;
     flex-direction:column;
+    
 }
 .pics{
     margin-top:0px;
@@ -301,6 +304,9 @@ export default {
     width:100%;
     
 }
+#ourTeam{
+    margin-top:200px;
+}
 #joinUs{
     margin-top:200px;
     height: 800px;
@@ -311,7 +317,7 @@ export default {
     margin-top:100px;
     height: 270px;
     
-    border:1px solid rgb(37, 199, 164); 
+    
     background-color:#0d3590 ;
 }
 </style>

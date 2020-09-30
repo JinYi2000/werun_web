@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style='position:relative'>
     <span id='title'>项目展示</span>   
     <span id='more'>更多 ></span>
     <div id='projectsContext'>
@@ -134,14 +134,14 @@ export default {
 }
 #title{
     position:absolute;
-    top:4100px;
+    top:-250px;
     left:195px;
     color:#455a64;
     font-size:45px;
 }
 #more{
     position:absolute;
-    top:4100px;
+    top:-250px;
     right:195px;
     color:#455a64;
     font-size:45px;
