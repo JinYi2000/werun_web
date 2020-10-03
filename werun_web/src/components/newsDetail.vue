@@ -46,21 +46,18 @@ export default {
 </script>
 <style scoped>
 h1{
-    margin-top:350px;
-    font-size: 60px;
+    margin-top:150px;
+    font-size: 50px;
 }
 #article_img{
-    min-width: 400px;
-    max-width: 700px;
-    margin-top:150px;
-    margin-left:500px;
-    margin-right:500px;
+    width:300px;
+    
 }
 #article{
-    margin:500px;
+    margin:100px;
 }
 #context{
-    margin-top:200px;
+    margin-top:100px;
     font-size: 30px;
     line-height: 60px;
     text-align: left;
@@ -71,13 +68,13 @@ h1{
     position:fixed;
     top:0px;
     z-index:5;
-    background-color: transparent;
+    background-color: white;
     transition: background-color 0.5s linear
 }
 #logo{
     margin-top:70px;
-    width:60px;
-    height:60px;
+    width:50px;
+    height:50px;
     float:left; 
     margin-left:195px;
 }
@@ -86,7 +83,7 @@ h1{
     margin-top:67px;
     margin-left:20px;
     color:#0d3590;
-    font-size:25px;
+    font-size:20px;
     font-weight: bold;;
 }
 #article{

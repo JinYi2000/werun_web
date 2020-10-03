@@ -154,18 +154,17 @@ export default {
     margin-top:385px;
 }
 #nav{
-    width:400px;
+    width:300px;
     height:600px;
-    
     float:left;
 }
 .titles{
-    width:400px;
+    width:300px;
     height:150px;
     
     margin-bottom:10px;
     background-color: rgb(250, 250, 250);
-    font-size:35px;
+    font-size:30px;
     font-weight: bold;
     color:darkgrey;
     line-height:150px;   
@@ -174,12 +173,11 @@ export default {
     transition:all 0.5s;
 }
 .titles:nth-child(1){
-    width:400px;
+    width:300px;
     height:150px;
-    
     margin-bottom:10px;
     background-color:#0d3590 ;
-    font-size:35px;
+    font-size:30px;
     font-weight: bold;
     color:white;
     line-height:150px;   
@@ -188,11 +186,11 @@ export default {
     transition:all 0.5s;
 }
 .titles:hover{
-    width:400px;
+    width:300px;
     height:150px;
     margin-bottom:10px;
     background-color: rgb(250, 250, 250);
-    font-size:35px;
+    font-size:30px;
     font-weight: bold;
     line-height:150px;   
     align-self:center;
@@ -201,11 +199,11 @@ export default {
 }
 
 #detail{
-    font-size:25px;
+    font-size:20px;
     background-color: #0d3590;
     line-height:630px;
     height:643px;
-    margin-left:410px;
+    margin-left:310px;
     margin-right:370px;
     color:white;
     transition:all 0.5s;

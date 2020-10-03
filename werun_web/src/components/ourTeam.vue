@@ -42,7 +42,7 @@ export default {
     },
     methods:{
         viewDetail(){
-            this.$router.push('teamDetail');
+            this.$router.push('Detail');
         },
         showPics(){
             //console.log('ok');
@@ -98,27 +98,27 @@ export default {
 </script>
 <style scoped>
 .change{
-    width:60px;
+    width:50px;
     margin-top:25px;
     
 }
 #left{
     position:absolute;
-    width:100px;
-    height:150px;
+    width:70px;
+    height:130px;
     background-color:black;
     opacity:0;
-    top:200px; 
+    top:150px; 
     left:195px; 
     transition:1s;
 }
 #right{
     position:absolute;
-    width:100px;
-    height:150px;
+    width:70px;
+    height:130px;
     background-color:black;
     opacity:0;
-    top:200px; 
+    top:150px; 
     right:195px;
     transition:1s;
 }
@@ -131,14 +131,13 @@ export default {
     font-weight:bold;
 }
 .news_img{
-    width:370px;
-    height:300px;
-    
+    width:300px;
+    height:250px;
 }
 .news_title{
     display:block;
     text-align: center;
-    margin:20px;
+    margin:10px;
     margin-bottom:50px;
     font-weight:bold;
     font-size:27px;
@@ -147,8 +146,9 @@ export default {
     display:block;
     text-align: center;
     margin:20px;
-    font-size:23px;
+    font-size:20px;
     color:#888888;
+    line-height: 10px;
 }
 #newsContent{
     margin-left:195px;
@@ -178,9 +178,8 @@ export default {
     left:0px;
     position:relative;
     float:left;
-    height:580px;
-    width:350px;
-    min-width:370px;
+    height:450px;
+    min-width:300px;
     background-color: rgb(255, 255, 255);
     margin-top:15px;
     margin-right:50px;
@@ -192,9 +191,8 @@ export default {
 .news:hover{
     position:relative;
     float:left;
-    height:600px;
-    width:370px;
-    min-width:370px;
+    height:450px;
+    min-width:300px;
     background-color: rgb(255, 255, 255);
     margin-top:0px;
     margin-right:50px;

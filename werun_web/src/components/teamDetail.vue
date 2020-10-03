@@ -21,7 +21,7 @@
             </div>
             <div id='people'>
                 <div class='person' v-for='(item,index) in peopleList'>
-
+                    
                 </div>
             </div>
         </div>

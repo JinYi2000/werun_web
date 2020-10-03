@@ -57,6 +57,10 @@ export default {
         }       
     },
     mounted(){
+        this.$axios.get('/rotationChart/listRotationChart')
+        .then(res=>{
+            console.log(res);
+        })
         this.reSize();
         var scrollTro = this.scroll_throttle();
         window.addEventListener('scroll',scrollTro);

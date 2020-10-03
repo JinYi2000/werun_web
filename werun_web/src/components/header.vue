@@ -37,8 +37,8 @@ export default {
 <style scoped>
 #logo{
     margin-top:70px;
-    width:60px;
-    height:60px;
+    width:50px;
+    height:50px;
     float:left; 
     margin-left:195px;
 }
@@ -47,17 +47,17 @@ export default {
     margin-top:67px;
     margin-left:20px;
     color:#eceff1;
-    font-size:25px;
+    font-size:20px;
     font-weight: bold;;
 }
 #partsName{
     float:right;
     margin-right:195px;
-    line-height:220px;
+    line-height:200px;
     color:#eceff1;
 }
 #partsName span{
-    font-size:27px;
+    font-size:23px;
     margin:20px;
 }
 </style>

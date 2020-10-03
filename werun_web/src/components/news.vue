@@ -121,27 +121,27 @@ export default {
 </script>
 <style scoped>
 .change{
-    width:60px;
+    width:50px;
     margin-top:25px;
     
 }
 #left2{
     position:absolute;
-    width:100px;
-    height:150px;
+    width:70px;
+    height:130px;
     background-color:black;
     opacity:0;
-    top:600px; 
+    top:550px; 
     left:195px; 
     transition:1s;
 }
 #right2{
     position:absolute;
-    width:100px;
-    height:150px;
+    width:70px;
+    height:130px;
     background-color:black;
     opacity:0;
-    top:600px; 
+    top:550px; 
     right:195px;
     transition:1s;
 }
@@ -149,20 +149,20 @@ export default {
     position:absolute;
     bottom:20px;
     left:20px;
-    font-size:25px;
+    font-size:20px;
     color:#888888;
     font-weight:bold;
 }
 .news_img{
-    width:400px;
-    height:300px;
+    width:300px;
+    height:250px;
 }
 .news_title{
     display:inline-block;
     text-align: left;
     margin:20px;
     font-weight:bold;
-    font-size:27px;
+    font-size:20px;
     
 }
 #newsContent{
@@ -193,9 +193,8 @@ export default {
     left:0px;
     position:relative;
     float:left;
-    height:600px;
-    width:400px;
-    min-width:400px;
+    height:450px;
+    width:300px;
     background-color: rgb(255, 255, 255);
     margin-top:15px;
     margin-right:50px;
@@ -207,9 +206,8 @@ export default {
 .news:hover{
     position:relative;
     float:left;
-    height:600px;
-    width:400px;
-    min-width:400px;
+    height:450px;
+    width:300px;
     background-color: rgb(255, 255, 255);
     margin-top:0px;
     margin-right:50px;

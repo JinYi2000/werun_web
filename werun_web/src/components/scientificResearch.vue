@@ -159,7 +159,7 @@ export default {
     border-bottom:5px solid #0d3590;
     margin-left:5%;
     margin-right:5%;
-    font-size: 40px;
+    font-size: 30px;
     text-align: left;
     color:#0d3590;
     font-weight: bold;
@@ -172,7 +172,7 @@ export default {
     border-bottom:5px solid gray;
     margin-left:5%;
     margin-right:5%;
-    font-size: 40px;
+    font-size: 30px;
     text-align: left;
     color:grey;
     font-weight: bold;
@@ -186,7 +186,7 @@ export default {
     border-bottom:5px solid #0d3590;
     margin-left:5%;
     margin-right:5%;
-    font-size: 40px;
+    font-size: 30px;
     text-align: left;
     color:#0d3590;
     font-weight: bold;

@@ -67,9 +67,6 @@ export default {
   flex-wrap: wrap;
   overflow: hidden;
   height: 1500px;
-  
-  
-  
   margin-right:195px;
 }
 #fieldsbody {
@@ -112,11 +109,11 @@ export default {
   margin-left: -30px;
   padding-right: 20%;
   line-height: 40px;
-  font-size: 25px;;
+  font-size: 20px;;
 }
 #fieldsbody img {
   display: block;
-  width: 132px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
 }
 </style>

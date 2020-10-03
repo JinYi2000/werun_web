@@ -37,35 +37,34 @@ img{
 }
 #title1{
     color:white;
-    font-size:50px;
-    left:230px;
+    font-size:40px;
+    left:10vw;
     margin-top:7vw;
     position:absolute;
     font-weight: bold;
 }
 #title2{
     color:white;
-    font-size:90px;
-    left:230px;
+    font-size:70px;
+    left:10vw;
     margin-top:10vw;
     position:absolute;
 }
 #title3{
     color:white;
-    font-size:50px;
-    left:230px;
+    font-size:40px;
+    left:10vw;
     top:16vw;
     position:absolute;
 }
-#button{
-    width:500px;
-    left:230px;
+#button{  
+    left:10vw;
     top:25vw;
     position:absolute;
-    line-height:80px;
-    height:80px;
-    width:270px;
-    font-size:40px;
+    line-height:70px;
+    height:70px;
+    width:220px;
+    font-size:35px;
     border:3px solid white;
     border-radius:20px;
     color:white;
@@ -75,13 +74,13 @@ img{
     color:white;
     background-color: #0d3590;
     width:500px;
-    left:230px;
+    left:10vw;
     top:25vw;
     position:absolute;
-    line-height:80px;
-    height:80px;
-    width:270px;
-    font-size:40px;
+    line-height:70px;
+    height:70px;
+    width:220px;
+    font-size:35px;
     border:3px solid #0d3590;
     border-radius:20px;
     font-weight:bold;
