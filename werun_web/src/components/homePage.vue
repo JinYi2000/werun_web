@@ -57,7 +57,7 @@ export default {
         }       
     },
     mounted(){
-        this.$axios.get('/rotationChart/listRotationChart')
+        this.$axios.post('/sys/windows/getValidate')
         .then(res=>{
             console.log(res);
         })

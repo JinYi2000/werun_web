@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/':{
-        target:'https://club.werun.top/homepage/',
+        target:'http://121.89.162.99:8180/homepage/',//https://club.werun.top/homepage/
         changeOrigin:true,
         pathRewrite:{
           '^/':''

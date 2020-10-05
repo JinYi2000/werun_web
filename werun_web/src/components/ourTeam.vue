@@ -10,7 +10,7 @@
             <span class='description'>{{item.dir}}</span>
         </div>
     </div>
-    <span id='more'>更多 ></span>
+    <span id='more' @click="viewDetail()">更多 ></span>
     <div id='left'  @mouseover="showPics()" @mouseout="concealPics()">
         <img @click="moveLeft()" class='change' src='@/assets/img/左.png'>
     </div>
@@ -42,7 +42,7 @@ export default {
     },
     methods:{
         viewDetail(){
-            this.$router.push('Detail');
+            this.$router.push('teamDetail');
         },
         showPics(){
             //console.log('ok');
