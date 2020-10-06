@@ -8,8 +8,6 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-
-
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -30,7 +28,7 @@ module.exports = {
     }
   },
   module: {
-    rules: [
+    rules: [//在使用不同的loader来解析处理不同类型的文件时，在rules里面来配置相关的规则
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -40,6 +38,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+      //include指想对那个文件夹里的东西进行处理
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

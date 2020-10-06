@@ -47,18 +47,18 @@ export default {
 <style scoped>
 h1{
     margin-top:150px;
-    font-size: 50px;
+    font-size: 45px;
 }
 #article_img{
     width:300px;
     
 }
 #article{
-    margin:100px;
+    margin:195px;
 }
 #context{
     margin-top:100px;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 60px;
     text-align: left;
 }
