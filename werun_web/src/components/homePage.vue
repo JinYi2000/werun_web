@@ -57,10 +57,8 @@ export default {
         }       
     },
     mounted(){
-        this.$axios.post('/sys/windows/getValidate')
-        .then(res=>{
-            console.log(res);
-        })
+        var res = new this.request('/project/listProject','',this.consoleData);
+        res.get();
         this.reSize();
         var scrollTro = this.scroll_throttle();
         window.addEventListener('scroll',scrollTro);
@@ -74,6 +72,12 @@ export default {
         this.loadPics();
     },
     methods:{
+        consoleData(data){
+            console.log(data);
+            console.log(this.pics);
+            /* this.pics = data;
+             */
+        },
         debounce_reSize(){
             var timer = null;
             const self = this;
