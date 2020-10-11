@@ -66,18 +66,6 @@ export default {
 };
 </script>
 <style scoped>
-#member_img {
-  width: 220px;
-  float: left;
-  margin-left: 220px;
-}
-
-#context {
-  margin-top: 100px;
-  font-size: 25px;
-  line-height: 60px;
-  text-align: left;
-}
 .header {
   height: 170px;
   width: 100%;
@@ -112,8 +100,13 @@ export default {
   font-weight: bold;
 }
 #article {
-  margin: 195px;
-  /*margin-top: 170px;*/
+  width: 1000px;
+  margin: 220px auto 200px;
+}
+#member_img {
+  width: 220px;
+  float: left;
+  margin-left: 135px;
 }
 #memberInfo {
   position: relative;
