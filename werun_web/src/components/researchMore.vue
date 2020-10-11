@@ -1,183 +1,123 @@
 <template>
-    <div style='position:relative;'>
-        <div class='header'>
-            <img id='logo' src='https://i.loli.net/2020/09/23/O9CUbHKVoPci7q3.png'>
-            <div class ='name'>
-            <span>WERUN</span>
-            <br/>
-            <span>C L U B</span>
-            </div>
-        </div>
-        <div id='context'>
-            <div id='nav'>
-                <span class='grade'>2019</span>
-                <span class='grade'>2018</span>
-                <span class='grade'>2017</span>
-                <span class='grade'>2016</span>
-                <span class='grade'>2015</span>
-                <span class='grade'>2014</span>
-                <span class='grade'>2013</span>
-                <span class='grade'>2012</span>
-            </div>
-            <div id='people'>
-                <div class='person' v-for='(item,index) in peopleList'>
-                    <div class='personDetail'>
-                        <img  class='news_img' :src='item.img'>
-                        <span class='title1'>{{item.name}}</span>
-                        <div class='line'></div>
-                        <span class='description'>{{item.grade}}、{{item.major}}、{{item.dir}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id='footer'>
-        <myFooter></myFooter>
-        </div>
-    </div> 
+  <div style="position: relative">
+    <div class="header">
+      <img id="logo" src="https://i.loli.net/2020/09/23/O9CUbHKVoPci7q3.png" />
+      <div class="name">
+        <span>WERUN</span>
+        <br />
+        <span>C L U B</span>
+      </div>
+    </div>
+    <article id="article">
+      <div id="research" v-for="(item, index) in researchList">
+        <img class="research_img" :src="item.picSrc" />
+        <span class="research_title">{{ item.content }}</span>
+      </div>
+      <!--
+    
+      <h1>{{ data.title }}</h1>
+      <img
+        id="article_img"
+        src="https://i.loli.net/2020/09/18/57uEnyzQJaI4HPA.jpg"
+      />
+      <article id="context">
+        {{ data.context }}
+      </article>
+    --></article>
+    <div id="footer">
+      <myFooter></myFooter>
+    </div>
+  </div>
 </template>
 <script>
-import myHeader from '@/components/header'
-import myFooter from '@/components/footer'
+import myHeader from "@/components/header";
+import myFooter from "@/components/footer";
 export default {
-    data(){
-        return{
-            peopleList:[ { img: 'https://i.loli.net/2020/09/24/XYgTzaldxZJksu2.jpg',
-             name: '孙一恒',
-              grade: '2017',
-               major: '软件工程', dir: '后端' },
-            { img: 'https://i.loli.net/2020/09/24/uNwtjIHARCJKo9r.jpg', name: '鹿轶轩', grade: '2018', major: '软件工程', dir: '后端' },
-            { img: 'https://i.loli.net/2020/09/24/WH32b5Y1BxUO9jG.jpg', name: '莫张浩', grade: '2018', major: '计算机科学与技术', dir: '前端' },
-            { img: 'https://i.loli.net/2020/09/24/3bTWSMKkhIFVENv.jpg', name: '刘俊良', grade: '2018', major: '软件工程', dir: '后端' }
-            ,{ img: 'https://i.loli.net/2020/09/24/XYgTzaldxZJksu2.jpg',
-             name: '孙一恒',
-              grade: '2017',
-               major: '软件工程', dir: '后端' },
-            { img: 'https://i.loli.net/2020/09/24/uNwtjIHARCJKo9r.jpg', name: '鹿轶轩', grade: '2018', major: '软件工程', dir: '后端' },
-            { img: 'https://i.loli.net/2020/09/24/WH32b5Y1BxUO9jG.jpg', name: '莫张浩', grade: '2018', major: '计算机科学与技术', dir: '前端' },
-            { img: 'https://i.loli.net/2020/09/24/3bTWSMKkhIFVENv.jpg', name: '刘俊良', grade: '2018', major: '软件工程', dir: '后端' } ]
-        }
-    },
-    methods:{
-        
-        
-    },
-    mounted(){
-            
-    },
-    components:{
-        myHeader,myFooter
-    }
-}
+  data() {
+    return {
+      researchList: [
+        {
+          picSrc: "https://i.loli.net/2020/09/23/1hf6wYcr2ZyMsvi.png",
+          context: "针对小文件的二级缓存预取的云存储框架及构建方法",
+        },
+
+        {
+          picSrc: "https://i.loli.net/2020/09/23/RMYdVtFePlWZ9av.jpg",
+          context:
+            "A method of Text extremum region Extraction based on Joint-Channels",
+        },
+        {
+          picSrc: "https://i.loli.net/2020/09/23/Qx6wHgIWF8P3sTU.jpg",
+          context:
+            "MMLUP: Multi-source & Multi-task Learning for User Profiles in Social Network",
+        },
+        {
+          picSrc: "https://i.loli.net/2020/09/23/Qx6wHgIWF8P3sTU.jpg",
+          context:
+            "SNES: Social-network-oriented Public Opinion Monitoring Platform Based on ElasticSearch",
+        },
+      ],
+    };
+  },
+  methods: {},
+  mounted() {},
+  components: {
+    myHeader,
+    myFooter,
+  },
+};
 </script>
 <style scoped>
-.personDetail{
-    margin-left:5px;
-    height:250px;
-    width:98%;
-    /* border:2px solid gold; */
-    background-color: rgb(255, 250, 250);
-    margin-bottom: 10px;
-
+h1 {
+  margin-top: 150px;
+  font-size: 45px;
 }
-.news_img{
-    width:110px;
-    height:110px;
-    border-radius: 60px;
-    float:left;
-    margin-top:20px;
-    margin-left: 50px;
+#research {
+  height: 350px;
 }
-.title1{
-    position:absolute;
-    left:200px;
-    font-size: 25px;
-    font-weight: bold;
-    display: inline-block;
-    margin-top:55px;
+.research_img {
+  width: 220px;
+  float: left;
+  margin-left: 220px;
 }
-.description{
-    position:absolute;
-    left:70px;
-    font-size: 15px;
-    display: inline-block;
-    margin-top:175px;
-    color:grey
+#article {
+  margin: 195px;
 }
-.grade{
-    display:inline-block;
-    width:100%;
-    height:100px;
-    font-size:30px;
-    line-height: 100px;
-    text-align: center;
-    margin-bottom:2px;
-    /* border:2px solid red; */
-    background-color: #0d3590;
-    color:white;
-    
+#context {
+  margin-top: 100px;
+  font-size: 25px;
+  line-height: 60px;
+  text-align: left;
 }
-#people{
-    position:relative;
-    margin-left:350px;
-    height:100%;
-    /* border:5px solid green; */
-    overflow: auto;
+.header {
+  height: 170px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+  background-color: white;
+  transition: background-color 0.5s linear;
 }
-#context{
-    margin:195px;
-    /* border:2px solid red; */
-    flex:1 1 auto;
-    margin-top:250px;
-    
+#logo {
+  margin-top: 70px;
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-left: 195px;
 }
-#nav{
-    width:350px;
-    height:100%;
-    /* border:2px solid red; */
-    float:left;
+.name {
+  float: left;
+  margin-top: 67px;
+  margin-left: 20px;
+  color: #0d3590;
+  font-size: 20px;
+  font-weight: bold;
 }
-h1{
-    margin-top:350px;
-    font-size: 60px;
+#article {
+  margin-top: 170px;
 }
-
-.header{
-    height: 170px;
-    width:100%;
-    position:fixed;
-    top:0px;
-    z-index:5;
-    background-color: white;
-    transition: background-color 0.5s linear
-}
-#logo{
-    margin-top:70px;
-    width:50px;
-    height:50px;
-    float:left; 
-    margin-left:195px;
-}
-.name{
-    float:left;
-    margin-top:67px;
-    margin-left:20px;
-    color:#0d3590;
-    font-size:20px;
-    font-weight: bold;;
-}
-#context{
-    height:100vw;
-}
-#footer{
-    
-    height: 270px;  
-    background-color:#0d3590 ;
-}
-.line{
-    position:absolute;
-    margin-top:150px;
-    width:90%;
-    margin-left: 20px;
-    border-top:2px solid #0d3590;
+#footer {
+  height: 270px;
+  background-color: #0d3590;
 }
 </style>
