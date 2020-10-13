@@ -8,7 +8,7 @@
             <span class='news_date'>{{item.date}}</span>
         </div>
     </div>
-    <span id='more'>更多 ></span>
+    <span id='more' @click="moreDetail()">更多 ></span>
     <div id='left2'  @mouseover="showPics()" @mouseout="concealPics()">
         <img @click="moveLeft()" class='change' src='@/assets/img/左.png'>
     </div>
@@ -61,6 +61,9 @@ export default {
         }
     },
     methods:{
+        moreDetail(){
+            this.$router.push('moreNews');
+        },
         viewDetail(){
             this.$router.push('newsDetail');
         },

@@ -75,8 +75,9 @@ export default {
     height:250px;
     width:98%;
     /* border:2px solid gold; */
-    background-color: rgb(255, 250, 250);
+    background-color: rgb(255, 255, 255);
     margin-bottom: 10px;
+    border:3px solid rgb(250, 248, 248);
 
 }
 .news_img{

@@ -1,7 +1,7 @@
 <template>
 <div style='position:relative'>
     <span id='title'>项目展示</span>   
-    <span id='more'>更多 ></span>
+    <span id='more' @click='viewMore()'>更多 ></span>
     <div id='projectsContext'>
         <div id='nav'>
             <div class='titles' @click='changeVal(0)'>
@@ -56,6 +56,9 @@ export default {
         }
     },
     methods:{
+        viewMore(){
+            this.$router.push('moreProjects');
+        },
         changeVal(val){
             this.chosedProject = val;
         },
