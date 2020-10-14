@@ -62,6 +62,9 @@ export default {
             
         }
     },
+    mounted(){
+       
+    },
     methods:{
         viewDetail(id){
             this.$router.push('newsDetail'+id+'');
