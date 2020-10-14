@@ -5,10 +5,15 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import request from '@/components/axios_request'
+import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui';
+
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 Vue.prototype.request = request
+Vue.use(ElementUI);
+
 
 /* eslint-disable no-new */
 new Vue({

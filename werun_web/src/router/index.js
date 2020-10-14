@@ -6,6 +6,7 @@ import newsDetail from '@/components/newsDetail'
 import teamDetail from '@/components/teamDetail'
 import moreNews from '@/components/moreNews'
 import moreProjects from '@/components/moreProjects'
+import registrationForm from '@/components/registrationForm'
 
 Vue.use(Router)
 
@@ -15,6 +16,11 @@ export default new Router({
       path: '/',
       name: 'homePage',
       component: homePage
+    },
+    {
+      path:'/registrationForm',
+      name:'registrationForm',
+      component:registrationForm
     },
     {
       path: '/moreNews',
