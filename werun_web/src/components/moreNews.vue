@@ -11,7 +11,7 @@
         <div id='context'>
             <h1 style='color:#455a64;margin-bottom:100px;margin-left:195px;text-align:left;'>更多动态</h1>
             <div id="news">
-                <div class='newDetail' v-for='(item,index) in newsList' @click='viewDetail(item.id)'>
+                <div class='newDetail' v-for='(item,index) in newsList' >
                         <img class='news_img' :src='item.picSrc'>
                         <span class='title1'>{{item.title}}</span>
                         <div class='line'></div>

@@ -183,6 +183,8 @@ export default {
 }
 #context{
     margin-top:150px;
+    height:calc(100vh - 420px);
+    min-height:1200px;
 }
 
 .header{
@@ -210,10 +212,10 @@ export default {
     font-weight: bold;;
 }
 
-#footer{
-    margin-top:200px;
+#footer{   
     height: 270px;  
     background-color:#0d3590 ;
+    bottom:0px;
 }
 .line{
     position:absolute;

@@ -17,7 +17,7 @@
                 <span>{{projectsList[3].title}}</span>
             </div>
         </div>
-        <img id='project_pic' :src='projectsList[chosedProject].picSrc'>
+        <img id='project_pic' :src='projectsList[chosedProject].picSrc' @click="seeDetail()">
         <div id='detail'>
             {{projectsList[chosedProject].context}}
         </div>
@@ -56,6 +56,9 @@ export default {
         }
     },
     methods:{
+        seeDetail(){
+            this.$router.push('projectDetail');
+        },
         viewMore(){
             this.$router.push('moreProjects');
         },
@@ -104,11 +107,8 @@ export default {
                 console.log(news);
                 for(let i = 0;i < news.length;i++){
                     news[i].style.left = this.leftDis + 'px';
-                }
-                
-                
+                }                
             }
-            
         }
     },
     mounted(){

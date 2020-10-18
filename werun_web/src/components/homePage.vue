@@ -57,6 +57,24 @@ export default {
         }       
     },
     mounted(){
+        this.$axios({
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            method: 'put',
+            url: '/news/updateNews?id=2c9a821d7524f7ad01752c4d30cb001b',
+            data: JSON.stringify({
+                title:'aaa',
+                picUrl:"333",
+                newsDate:"2020",
+                contest:"hhhh",
+                briefIntro:"jhj"
+            })
+        }).then(res=>{
+            console.log(res);
+        })
+
+
         var res = new this.request('/project/listProject','',this.consoleData);
         res.get();
         this.reSize();

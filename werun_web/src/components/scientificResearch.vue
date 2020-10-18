@@ -1,7 +1,7 @@
 <template>
 <div style='position:relative'>
     <span id='title'>科研成果</span>   
-    <span id='more'>更多 ></span>
+    <span id='more' @click="seeMore()">更多 ></span>
     <div id='projectsContext'>
         <div id='titles'>
             <div class='researches' @click='changeVal(0)'>{{projectsList[0].context}}</div>
@@ -9,7 +9,7 @@
             <div class='researches' @click='changeVal(2)'>{{projectsList[2].context}}</div>
             <div class='researches' @click='changeVal(3)'>{{projectsList[3].context}}</div>
         </div>
-        <img id='project_pic' :src='projectsList[chosedProject].picSrc'>
+        <img id='project_pic' :src='projectsList[chosedProject].picSrc' @click="viewDetail()">
 
         
     </div>
@@ -45,6 +45,13 @@ export default {
         }
     },
     methods:{
+        viewDetail(){
+            this.$router.push('researchDetail')
+        },
+        seeMore(){
+            console.log('ok');
+            this.$router.push('researchMore')
+        },
         changeVal(val){
             this.chosedProject = val;
         },
