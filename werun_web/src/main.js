@@ -5,14 +5,17 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import request from '@/components/axios_request'
-import 'element-ui/lib/theme-chalk/index.css';
-import ElementUI from 'element-ui';
+//import 'element-ui/lib/theme-chalk/index.css';
+//import ElementUI from 'element-ui';
+import { Input,Select } from 'element-ui';
 
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 Vue.prototype.request = request
-Vue.use(ElementUI);
+Vue.use(Input)
+Vue.use(Select)
+//Vue.use(ElementUI);
 
 
 /* eslint-disable no-new */

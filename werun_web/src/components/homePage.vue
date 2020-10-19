@@ -5,7 +5,7 @@
     </div>
     <div id='myPic'>
     <div class='pics' v-for="(item,index) in pics">
-        <img :id="picId(index)" >
+        <img class='pic' :id="picId(index)" >
     </div>
     </div>
     <div id='cover'>
@@ -57,24 +57,6 @@ export default {
         }       
     },
     mounted(){
-        this.$axios({
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8'
-            },
-            method: 'put',
-            url: '/news/updateNews?id=2c9a821d7524f7ad01752c4d30cb001b',
-            data: JSON.stringify({
-                title:'aaa',
-                picUrl:"333",
-                newsDate:"2020",
-                contest:"hhhh",
-                briefIntro:"jhj"
-            })
-        }).then(res=>{
-            console.log(res);
-        })
-
-
         var res = new this.request('/project/listProject','',this.consoleData);
         res.get();
         this.reSize();
@@ -85,14 +67,14 @@ export default {
         window.onresize = function(){
             sizeChanged();
         };
-        this.changePic(3000);
-        
         this.loadPics();
+        this.changePic(3000);       
+        
     },
     methods:{
         consoleData(data){
-            console.log(data);
-            console.log(this.pics);
+            //console.log(data);
+            //console.log(this.pics);
             /* this.pics = data;
              */
         },
@@ -143,11 +125,13 @@ export default {
                 pic.style.opacity = 0;
                 /* console.log(pic); */
                 pic.onload = ()=>{
-                    setTimeout(() => {
+                    /* setTimeout(() => {
                         pic.style.opacity = 1;
-                    }, 300);
+                        
+                    }, 300); */
                     
                     //console.log('ok');
+                    //console.log('pic loaded'+index);
                     this.picNums++;
                     resolve(index + 1);
                 }
@@ -234,14 +218,17 @@ export default {
         },
         changePic2(){
             //console.log(this);
-            if(this.picNum >= this.picNums - 1){
+            if(this.picNum >= this.picNums){
                 this.picNum = 0;
             }
-            var pics = document.getElementsByClassName('pics');
+            var pics = document.getElementsByClassName('pic');
             for(let i = 0;i < this.picNums;i++){
                 pics[i].style.opacity = 0;
             }
             pics[this.picNum].style.opacity = 1;
+            //console.log(pics[this.picNum]);
+            //console.log('opacity'+pics[this.picNum].style.opacity)
+            //console.log('picNum'+this.picNum);
             this.picNum++;
         }
     },
