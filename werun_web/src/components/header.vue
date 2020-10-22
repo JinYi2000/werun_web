@@ -7,20 +7,27 @@
     <span>C L U B</span>
     </div>
     <div id='partsName' v-show='ifShow()'>
-        <span @click='scroll(920)'>最新动态</span>
-        <span @click='scroll(2057)'>研究方向</span>
-        <span @click='scroll(3652)'>项目展示</span>
-        <span @click='scroll(4810)'>科研成果</span>
-        <span @click='scroll(5921)'>团队成员</span>
-        <span @click='scroll(6616)'>加入我们</span>
+        <span @click='scroll("news")'>最新动态</span>
+        <span @click='scroll("fields")'>研究方向</span>
+        <span @click='scroll("projects")'>项目展示</span>
+        <span @click='scroll("scientificResearch")'>科研成果</span>
+        <span @click='scroll("ourTeam")'>团队成员</span>
+        <span @click='scroll("joinUs")'>加入我们</span>
     </div>
 </div>
 </template>
 <script>
 export default {
     methods:{
-        scroll(height){
-            window.scrollTo(0,height);
+        scroll(key){
+            var obj = document.getElementById(key);
+            var topHeight = obj.offsetTop - 150;
+            //console.log(topHeight);
+            window.scrollTo({
+                top:topHeight,
+                left:0,
+                behavior:'smooth'
+            });
         },
         ifShow(){
             var url = window.location.hash;
