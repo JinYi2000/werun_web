@@ -54,6 +54,7 @@ export default {
                 'https://i.loli.net/2020/09/27/Kyuwxb13BV9SLTk.jpg'],
             picNum:0,//当前选中的图片
             picNums:0,//当前加载好的图片数量
+            picHeight:0
         }       
     },
     mounted(){
@@ -94,6 +95,8 @@ export default {
             //console.log('ok');
             var width = document.body.clientWidth;
             var height = width/1.8;
+            this.picHeight = height;
+            //console.log(this.picHeight);
             for(let i = 0;i<this.pics.length;i++){
                 var pic = document.getElementById(this.picId(i));
                 pic.style.height = height + 'px';
@@ -172,6 +175,7 @@ export default {
                     lastTime = thisTime;
                     if(self.ifShow()){
                         self.scrollToTop();
+                        setTimeout(self.scrollToTop,500);
                     }
                     
                 }
@@ -188,7 +192,7 @@ export default {
             }
             //console.log(dis);
             //this.changePic();
-            if(dis > 859.5){     
+            if(dis > this.picHeight){     
                 var header = document.getElementsByClassName('header'); 
                 var name = header[0].getElementsByClassName('name');
                 var partsName = document.getElementById('partsName');
