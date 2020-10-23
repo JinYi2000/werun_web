@@ -90,7 +90,7 @@ export default {
             var dis = num - 3;
             if(this.leftDis > -450*dis){
                 this.leftDis -= 450;
-                console.log(this.leftDis + 'px')
+                //console.log(this.leftDis + 'px')
                 for(let i = 0;i < news.length;i++){
                     news[i].style.left = this.leftDis + 'px';
                 }
@@ -105,8 +105,8 @@ export default {
             var num = this.newsList.length;
             if(this.leftDis < 0){
                 this.leftDis += 450;
-                console.log(this.leftDis + 'px');
-                console.log(news);
+                //console.log(this.leftDis + 'px');
+                //console.log(news);
                 for(let i = 0;i < news.length;i++){
                     news[i].style.left = this.leftDis + 'px';
                 }

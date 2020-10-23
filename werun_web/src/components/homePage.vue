@@ -54,10 +54,12 @@ export default {
                 'https://i.loli.net/2020/09/27/Kyuwxb13BV9SLTk.jpg'],
             picNum:0,//当前选中的图片
             picNums:0,//当前加载好的图片数量
-            picHeight:0
+            picHeight:0,
+            timeInterval:0
         }       
     },
     mounted(){
+        console.log('mounted');
         var res = new this.request('/project/listProject','',this.consoleData);
         res.get();
         this.reSize();
@@ -216,11 +218,15 @@ export default {
             } 
         },
         changePic(interval){  
-            if(this.ifShow()){
-                setInterval(this.changePic2,interval);
+            //console.log(window.timeInterval);
+            if(!window.timeInterval){
+                //console.log('triggered0');
+                window.timeInterval = setInterval(this.changePic2,interval);
+                //console.log(this.timeInterval);
             }    
         },
         changePic2(){
+            console.log('triggered');
             //console.log(this);
             if(this.picNum >= this.picNums){
                 this.picNum = 0;
