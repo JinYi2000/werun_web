@@ -5,7 +5,6 @@ class axiosRequest{
         this.url = url;
         this.data = data;
         this.func = func;
-
     }
     returnRes(res){
         console.log('ok');

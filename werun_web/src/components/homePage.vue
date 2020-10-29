@@ -5,7 +5,7 @@
     </div>
     <div id='myPic'>
     <div class='pics' v-for="(item,index) in pics">
-        <img class='pic' :id="picId(index)" >
+        <img class='pic'  :id="picId(index)"><!--  -->
     </div>
     </div>
     <div id='cover'>
@@ -47,20 +47,19 @@ import {debounce,throttle} from './debounce_throttle'
 export default {
     data(){
         return{
-            pics:['https://i.loli.net/2020/09/18/Nhb4kPpRyqSFKvo.jpg',
-                'https://i.loli.net/2020/09/27/RtaveiXDTLlm9CG.jpg',
-                'https://i.loli.net/2020/09/27/Spi7tWgye6jGEKT.jpg',               
-                'https://i.loli.net/2020/09/27/MARlCZQq1przIsV.jpg',
-                'https://i.loli.net/2020/09/27/Kyuwxb13BV9SLTk.jpg'],
+            pics:[],
             picNum:0,//当前选中的图片
             picNums:0,//当前加载好的图片数量
             picHeight:0,
             timeInterval:0
         }       
     },
+    created(){
+        
+    },
     mounted(){
-        console.log('mounted');
-        var res = new this.request('/project/listProject','',this.consoleData);
+        //console.log('mounted');
+        var res = new this.request('/rotationChart/listRotationChart','',this.consoleData);
         res.get();
         this.reSize();
         var scrollTro = this.scroll_throttle();
@@ -70,7 +69,7 @@ export default {
         window.onresize = function(){
             sizeChanged();
         };
-        this.loadPics();
+        
         this.changePic(3000);       
         
     },
@@ -78,8 +77,14 @@ export default {
         consoleData(data){
             //console.log(data);
             //console.log(this.pics);
-            /* this.pics = data;
-             */
+            this.pics.push(1);
+            this.pics.splice(1);
+            this.pics = data;
+            var self = this;
+            //console.log(this.pics);
+            this.$nextTick(()=>{
+                self.loadPics();
+            })
         },
         debounce_reSize(){
             var timer = null;
@@ -101,6 +106,7 @@ export default {
             //console.log(this.picHeight);
             for(let i = 0;i<this.pics.length;i++){
                 var pic = document.getElementById(this.picId(i));
+                //console.log(pic);
                 pic.style.height = height + 'px';
                 //onsole.log(pic.style.height);
             }
@@ -125,11 +131,19 @@ export default {
             return new Promise((resolve,reject)=>{
                 
                 var theId = 'pic' + index;
-                var pic = document.getElementById(theId);
-                pic.src = this.pics[index];
+                //var pic = document.getElementById(theId);
+                var myPics = (document.getElementsByClassName('pic'));
+                var pic = myPics[index];
+                //console.log(myPics);
+                //console.log(theId);
+                //console.log(myPics[0]);
+                pic.src = this.pics[index].picUrl;
+                
                 pic.style.opacity = 0;
                 /* console.log(pic); */
+                var self = this;
                 pic.onload = ()=>{
+                    self.reSize();
                     /* setTimeout(() => {
                         pic.style.opacity = 1;
                         
@@ -144,16 +158,8 @@ export default {
         },
         loadPics(){
             this.loadPic(0).then((res)=>{
-                
                 return this.loadPic(res);
             }).then((res)=>{
-                
-                return this.loadPic(res);
-            }).then((res)=>{
-               
-                return this.loadPic(res);
-            }).then((res)=>{
-               
                 return this.loadPic(res);
             })
         },
@@ -226,7 +232,7 @@ export default {
             }    
         },
         changePic2(){
-            console.log('triggered');
+            //console.log('triggered');
             //console.log(this);
             if(this.picNum >= this.picNums){
                 this.picNum = 0;
