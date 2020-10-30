@@ -12,8 +12,8 @@
             <h1 style='color:#455a64;margin-bottom:100px;margin-left:195px;text-align:left;'> 更多研究成果</h1>
             <div id="news">
                 <div class='newDetail' v-for='(item,index) in projectsList' >
-                        <img class='news_img' :src='item.picSrc'>
-                        <span class='title1'>{{item.context}}</span>
+                        <img class='news_img' :src='item.context'>
+                        <span class='title1'>{{item.picUrl}}</span>
                         <div class='line'></div>
                         
                         
@@ -33,36 +33,22 @@ export default {
         return{
             projectsList:[
                 
-                {
-                    picSrc:'https://i.loli.net/2020/09/23/1hf6wYcr2ZyMsvi.png',
-                    context:'针对小文件的二级缓存预取的云存储框架及构建方法'
-                },
-                {
-                    
-                    picSrc:'https://i.loli.net/2020/09/23/RMYdVtFePlWZ9av.jpg',
-                    context:'A method of Text extremum region Extraction based on Joint-Channels'
-                },
-                {
-                    
-                    picSrc:'https://i.loli.net/2020/09/23/Qx6wHgIWF8P3sTU.jpg',
-                    context:'MMLUP: Multi-source & Multi-task Learning for User Profiles in Social Network'
-                },
-                {
-                    
-                    picSrc:'https://i.loli.net/2020/09/23/Qx6wHgIWF8P3sTU.jpg',
-                    context:'SNES: Social-network-oriented Public Opinion Monitoring Platform Based on ElasticSearch'
-                },
                 
-                
-            
             ]
         }
     },
     created(){
     },
     methods:{
+         getData(){
+            this.$axios.get('/scientificAchievement/listScientificAchievement').then(res=>{
+                console.log(res);
+                this.projectsList = res.data.data;
+            })
+        },
     },
     mounted(){
+        this.getData();
     },
     
     components:{

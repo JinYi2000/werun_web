@@ -12,7 +12,7 @@
             <h1 style='color:#455a64;margin-bottom:100px;margin-left:195px;text-align:left;'> 更多项目</h1>
             <div id="news">
                 <div class='newDetail' v-for='(item,index) in projectsList' >
-                        <img class='news_img' :src='item.picSrc'>
+                        <img class='news_img' :src='item.picUrl'>
                         <span class='title1'>{{item.title}}</span>
                         <div class='line'></div>
                         <span class='description'>{{item.context}}</span>
@@ -32,33 +32,20 @@ export default {
     data(){
         return{
             projectsList:[
-                {
-                    title:'房合荟',
-                    picSrc:'https://i.loli.net/2020/09/22/v2AF8xskQrI9Yjm.jpg',
-                    context:'实验室为瀚宝公司开发的房地产O2O平台'
-                },
                 
-                {
-                    title:'贤得家',
-                    picSrc:'https://i.loli.net/2020/09/22/vLVz5pbIWs8ZiCQ.png',
-                    context:'实验室为瀚宝公司开发的智慧社区平台'
-                },
-                {
-                    title:'威海市经区警民服务',
-                    picSrc:'https://i.loli.net/2020/09/22/CLHqd1OlxRVXfwj.jpg',
-                    context:'实验室为威海公安开发的警民服务系统'
-                },
-                {
-                    title:'绩效考评系统',
-                    picSrc:'https://i.loli.net/2020/09/22/wIhk1xLySTEMegN.jpg',
-                    context:'实验室为我校开发的教师绩效考评系统'
-                },
             ]
         }
     },
     created(){
+        this.getData();
     },
     methods:{
+        getData(){
+            this.$axios.get('/project/listProject').then(res=>{
+                console.log(res);
+                this.projectsList = res.data.data;
+            })
+        },
     },
     mounted(){
     },

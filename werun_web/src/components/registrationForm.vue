@@ -26,6 +26,13 @@
                 </div>
                 <br/>
                 <div class='inputs'>
+                    专业：<el-input class='info' v-model="input" placeholder="请输入内容"></el-input>
+                </div>
+                <div class='inputs'>
+                    QQ：<el-input class='info' v-model="input" placeholder="请输入内容"></el-input>
+                </div>
+                <br/>
+                <div class='inputs'>
                     性别：<el-select class='info' v-model="input" placeholder="请输入内容"></el-select>
                 </div>
                 <div class='inputs'>

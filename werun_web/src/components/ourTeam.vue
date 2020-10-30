@@ -40,7 +40,16 @@ export default {
             { img: 'https://i.loli.net/2020/09/24/3bTWSMKkhIFVENv.jpg', name: '刘俊良', grade: '2018', major: '软件工程', dir: '后端' } ]
         }
     },
+    mounted(){
+        this.getData();
+    },
     methods:{
+        getData(){
+            this.$axios.get('/member/listMember').then(res=>{
+                console.log(res);
+                this.newsList = res.data.data;
+            })
+        },
         viewDetail(){
             this.$router.push('teamDetail');
         },

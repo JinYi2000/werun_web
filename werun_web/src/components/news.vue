@@ -3,7 +3,7 @@
     <span id='title'>最新动态</span>
     <div id='newsContent'  @mouseover="showPics()" @mouseout="concealPics()">
         <div class='news' v-for="(item,key) in newsList" @click="viewDetail()">
-            <img class='news_img' :src='item.picSrc'>
+            <img class='news_img' :src='item.picUrl'>
             <span class='news_title'>{{item.title}}</span>
             <span class='news_date'>{{item.date}}</span>
         </div>
@@ -22,45 +22,16 @@ export default {
     data(){
         return{
             leftDis:0,
-            newsList:[
-                {
-                    title:'2016级舒钰博同学论文发表于JCR 1区杂志 CMC-Computers Materials & Continua',
-                    picSrc:'https://i.loli.net/2020/09/18/57uEnyzQJaI4HPA.jpg',
-                    date:'Sep 02'
-                },
-                
-                {
-                    title:'2015级刘海青和章江山同学参与的发明专利获得授权',
-                    picSrc:'https://i.loli.net/2020/09/18/NcQ4zFASxibyuM9.jpg',
-                    date:'Sep 02'
-                },
-                {
-                    title:'2016级林春旭，2017级郭振豪、孙一恒同学论文被国际学术会议ICAIS接收',
-                    picSrc:'https://i.loli.net/2020/09/18/ePMsrQjTFmt3yu6.jpg',
-                    date:'Sep 02'
-                },
-                {
-                    title:'2016级舒钰博同学论文发表于JCR 1区杂志 CMC-Computers Materials & Continua',
-                    picSrc:'https://i.loli.net/2020/09/18/57uEnyzQJaI4HPA.jpg',
-                    date:'Sep 02'
-                },
-                
-                {
-                    title:'2015级刘海青和章江山同学参与的发明专利获得授权',
-                    picSrc:'https://i.loli.net/2020/09/18/NcQ4zFASxibyuM9.jpg',
-                    date:'Sep 02'
-                },
-                {
-                    title:'2016级林春旭，2017级郭振豪、孙一恒同学论文被国际学术会议ICAIS接收',
-                    picSrc:'https://i.loli.net/2020/09/18/ePMsrQjTFmt3yu6.jpg',
-                    date:'Sep 02'
-                },
-                
-                
-            ]
+            newsList:[]
         }
     },
     methods:{
+        getNews(){
+            this.$axios.get('/news/listNews').then(res=>{
+                console.log(res);
+                this.newsList = res.data.data;
+            })
+        },
         moreDetail(){
             this.$router.push('moreNews');
         },
@@ -116,7 +87,7 @@ export default {
     },
     mounted(){
         var newsContent = document.getElementById('newsContent');
-        
+        this.getNews();
             
         
     }   

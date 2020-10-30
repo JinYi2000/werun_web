@@ -4,12 +4,12 @@
     <span id='more' @click="seeMore()">更多 ></span>
     <div id='projectsContext'>
         <div id='titles'>
-            <div class='researches' @click='changeVal(0)'>{{projectsList[0].context}}</div>
-            <div class='researches' @click='changeVal(1)'>{{projectsList[1].context}}</div>
-            <div class='researches' @click='changeVal(2)'>{{projectsList[2].context}}</div>
-            <div class='researches' @click='changeVal(3)'>{{projectsList[3].context}}</div>
+            <div class='researches' @click='changeVal(0)'>{{projectsList[0].picUrl}}</div>
+            <div class='researches' @click='changeVal(1)'>{{projectsList[1].picUrl}}</div>
+            <div class='researches' @click='changeVal(2)'>{{projectsList[2].picUrl}}</div>
+            <div class='researches' @click='changeVal(3)'>{{projectsList[3].picUrl}}</div>
         </div>
-        <img id='project_pic' :src='projectsList[chosedProject].picSrc' @click="viewDetail()">
+        <img id='project_pic' :src='projectsList[chosedProject].context' @click="viewDetail()">
 
         
     </div>
@@ -21,30 +21,17 @@ export default {
         return{
             chosedProject:0,
             projectsList:[
-                {
-                    picSrc:'https://i.loli.net/2020/09/23/1hf6wYcr2ZyMsvi.png',
-                    context:'针对小文件的二级缓存预取的云存储框架及构建方法'
-                },
-                
-                {
-                    
-                    picSrc:'https://i.loli.net/2020/09/23/RMYdVtFePlWZ9av.jpg',
-                    context:'A method of Text extremum region Extraction based on Joint-Channels'
-                },
-                {
-                    
-                    picSrc:'https://i.loli.net/2020/09/23/Qx6wHgIWF8P3sTU.jpg',
-                    context:'MMLUP: Multi-source & Multi-task Learning for User Profiles in Social Network'
-                },
-                {
-                    
-                    picSrc:'https://i.loli.net/2020/09/23/Qx6wHgIWF8P3sTU.jpg',
-                    context:'SNES: Social-network-oriented Public Opinion Monitoring Platform Based on ElasticSearch'
-                },
+               
             ]
         }
     },
     methods:{
+        getData(){
+            this.$axios.get('/scientificAchievement/listScientificAchievement').then(res=>{
+                console.log(res);
+                this.projectsList = res.data.data;
+            })
+        },
         viewDetail(){
             this.$router.push('researchDetail')
         },
@@ -105,7 +92,8 @@ export default {
         }
     },
     mounted(){
-        var newsContent = document.getElementById('newsContent'); 
+        var newsContent = document.getElementById('newsContent');
+        this.getData(); 
     },
     watch:{
         chosedProject(){

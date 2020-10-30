@@ -17,7 +17,7 @@
                 <span>{{projectsList[3].title}}</span>
             </div>
         </div>
-        <img id='project_pic' :src='projectsList[chosedProject].picSrc' @click="seeDetail()">
+        <img id='project_pic' :src='projectsList[chosedProject].picUrl' @click="seeDetail()">
         <div id='detail'>
             {{projectsList[chosedProject].context}}
         </div>
@@ -30,32 +30,16 @@ export default {
     data(){
         return{
             chosedProject:0,
-            projectsList:[
-                {
-                    title:'房合荟',
-                    picSrc:'https://i.loli.net/2020/09/22/v2AF8xskQrI9Yjm.jpg',
-                    context:'实验室为瀚宝公司开发的房地产O2O平台'
-                },
-                
-                {
-                    title:'贤得家',
-                    picSrc:'https://i.loli.net/2020/09/22/vLVz5pbIWs8ZiCQ.png',
-                    context:'实验室为瀚宝公司开发的智慧社区平台'
-                },
-                {
-                    title:'威海市经区警民服务',
-                    picSrc:'https://i.loli.net/2020/09/22/CLHqd1OlxRVXfwj.jpg',
-                    context:'实验室为威海公安开发的警民服务系统'
-                },
-                {
-                    title:'绩效考评系统',
-                    picSrc:'https://i.loli.net/2020/09/22/wIhk1xLySTEMegN.jpg',
-                    context:'实验室为我校开发的教师绩效考评系统'
-                },
-            ]
+            projectsList:[]
         }
     },
     methods:{
+        getData(){
+            this.$axios.get('/project/listProject').then(res=>{
+                console.log(res);
+                this.projectsList = res.data.data;
+            })
+        },
         seeDetail(){
             this.$router.push('projectDetail');
         },
@@ -113,6 +97,7 @@ export default {
     },
     mounted(){
         var newsContent = document.getElementById('newsContent'); 
+        this.getData();
     },
     watch:{
         chosedProject(){
