@@ -41,7 +41,7 @@ export default {
     },
     methods:{
         getData(){
-            this.$axios.get('/project/listProject').then(res=>{
+            this.$axios.get('https://club.werun.top:8888/homepage/project/listProject').then(res=>{
                 console.log(res);
                 this.projectsList = res.data.data;
             })

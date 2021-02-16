@@ -7,14 +7,15 @@ import axios from 'axios'
 import request from '@/components/axios_request'
 //import 'element-ui/lib/theme-chalk/index.css';
 //import ElementUI from 'element-ui';
-import { Input,Select } from 'element-ui';
-
-
+import { Input,Select,Option,OptionGroup } from 'element-ui';
+axios.defaults.baseURL = 'homepage/'
+  
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 Vue.prototype.request = request
 Vue.use(Input)
 Vue.use(Select)
+Vue.use(Option)
 //Vue.use(ElementUI);
 
 

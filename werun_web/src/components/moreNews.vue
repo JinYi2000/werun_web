@@ -37,7 +37,7 @@ export default {
     },
     methods:{
         getNews(){
-            this.$axios.get('/news/listNews').then(res=>{
+            this.$axios.get('https://club.werun.top:8888/homepage/news/listNews').then(res=>{
                 console.log(res);
                 this.newsList = res.data.data;
             })

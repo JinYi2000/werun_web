@@ -1,9 +1,9 @@
 <template>
 <div id='content'>
     <img id='logo1' src='https://i.loli.net/2020/09/23/xApzImt36lfXMRs.png'>
-    <span id='and'>|</span>
-    <img id='logo2' src='https://i.loli.net/2020/09/23/fH9ihPlvUqtZJ1Q.png'>
-    <span id='title2'>威软俱乐部</span>
+  <!--  <span id='and'>|</span>
+     <img id='logo2' src='https://i.loli.net/2020/09/23/fH9ihPlvUqtZJ1Q.png'>
+    <span id='title2'>威软俱乐部</span> -->
 </div>
 </template>
 <script>

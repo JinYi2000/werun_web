@@ -55,12 +55,16 @@ export default {
         }       
     },
     created(){
-        
+        this.$axios.get('https://club.werun.top:8888/homepage/news/listNews').then(res=>{
+            console.log(res);
+        })
     },
     mounted(){
         //console.log('mounted');
-        var res = new this.request('/rotationChart/listRotationChart','',this.consoleData);
+        console.log('picList');
+        var res = new this.request('https://club.werun.top:8888/homepage/rotationChart/listRotationChart','',this.consoleData);
         res.get();
+        this.loadPics();
         this.reSize();
         var scrollTro = this.scroll_throttle();
         window.addEventListener('scroll',scrollTro);
@@ -75,7 +79,7 @@ export default {
     },
     methods:{
         consoleData(data){
-            //console.log(data);
+            console.log(data);
             //console.log(this.pics);
             this.pics.push(1);
             this.pics.splice(1);
@@ -138,7 +142,8 @@ export default {
                 //console.log(theId);
                 //console.log(myPics[0]);
                 pic.src = this.pics[index].picUrl;
-                
+                //console.log(this.pics)
+                //pic.src = this.pics[index]
                 pic.style.opacity = 0;
                 /* console.log(pic); */
                 var self = this;
@@ -158,9 +163,9 @@ export default {
         },
         loadPics(){
             this.loadPic(0).then((res)=>{
-                return this.loadPic(res);
-            }).then((res)=>{
-                return this.loadPic(res);
+                if(res<this.pics.length){
+                     this.loadPic(res)
+                }
             })
         },
         ifShow(){
@@ -203,23 +208,30 @@ export default {
             if(dis > this.picHeight){     
                 var header = document.getElementsByClassName('header'); 
                 var name = header[0].getElementsByClassName('name');
+                var name2 = header[0].getElementsByClassName('name2');
                 var partsName = document.getElementById('partsName');
                 var logo = document.getElementById('logo');
-                //console.log(logo);
                 logo.src = 'https://i.loli.net/2020/09/23/O9CUbHKVoPci7q3.png';
+                var logo2 = document.getElementById('logo2');
+                logo2.src = 'https://i.loli.net/2020/12/09/UGPRdMivHXzpLmk.png';
                 partsName.style.color = '#0d3590'
                 header[0].style.backgroundColor = 'white';               
-                name[0].style.color = '#0d3590';           
+                name[0].style.color = '#0d3590';   
+                name2[0].style.color = '#0d3590';          
             }
             else{              
                 var header = document.getElementsByClassName('header');               
                 var name = header[0].getElementsByClassName('name');
+                var name2 = header[0].getElementsByClassName('name2');
                 var partsName = document.getElementById('partsName');
                 var logo = document.getElementById('logo');
                 logo.src = 'https://i.loli.net/2020/09/23/fH9ihPlvUqtZJ1Q.png';
+                var logo2 = document.getElementById('logo2');
+                logo2.src = 'https://i.loli.net/2020/12/09/X2h8TmILKsPWCE4.png';
                 partsName.style.color = 'white'
                 header[0].style.backgroundColor = 'transparent';
                 name[0].style.color = 'white';
+                name2[0].style.color = 'white'
                 //console.log(name[0]);              
             } 
         },

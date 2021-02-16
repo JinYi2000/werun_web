@@ -30,12 +30,46 @@ export default {
     data(){
         return{
             chosedProject:0,
-            projectsList:[]
+            projectsList:[{
+            id: "1",
+            title : "房合荟",
+            context: "实验室为瀚宝公司开发的房地产O2O平台",
+            briefIntro: "012",
+            picUrl: "https://i.loli.net/2020/09/22/v2AF8xskQrI9Yjm.jpg"
+        },
+        {
+            id: "2",
+            title: "贤得家",
+            context: "实验室为瀚宝公司开发的智慧社区平台",
+            briefIntro: "12344",
+            picUrl: "https://i.loli.net/2020/09/22/vLVz5pbIWs8ZiCQ.png"
+        },
+        {
+            id: "2c9a821d7524f7ad017525368a4c0009",
+            title: "测试2",
+            context: "测试2",
+            briefIntro: "测试2",
+            picUrl: "111"
+        },
+        {
+            id: "3",
+            title: "威海市经区警民服务",
+            context: "实验室为威海公安开发的警民服务系统",
+            briefIntro: null,
+            picUrl: "https://i.loli.net/2020/09/22/CLHqd1OlxRVXfwj.jpg"
+        },
+        {
+            id: "4",
+            title: "绩效考评系统",
+            context: "实验室为我校开发的教师绩效考评系统",
+            briefIntro: null,
+            picUrl: "https://i.loli.net/2020/09/22/wIhk1xLySTEMegN.jpg"
+        }]
         }
     },
     methods:{
         getData(){
-            this.$axios.get('/project/listProject').then(res=>{
+            this.$axios.get('https://club.werun.top:8888/homepage/project/listProject').then(res=>{
                 console.log(res);
                 this.projectsList = res.data.data;
             })

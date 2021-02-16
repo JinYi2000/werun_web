@@ -48,7 +48,7 @@ export default {
     },
     methods:{
         getData(){
-            this.$axios.get('/member/listMember').then(res=>{
+            this.$axios.get('https://club.werun.top:8888/homepage/member/listMember').then(res=>{
                 console.log(res);
                 this.peopleList = res.data.data;
             })

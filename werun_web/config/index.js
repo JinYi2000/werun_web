@@ -6,14 +6,13 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
       '/':{
-        target:'http://121.89.162.99:8180/homepage/',//https://club.werun.top/homepage/
-        changeOrigin:true,
+        target:'https://club.werun.top:8888/homepge',//
+        changeOrigin:true,//http://121.89.162.99:8180/homepage
         pathRewrite:{
           '^/':''
         }

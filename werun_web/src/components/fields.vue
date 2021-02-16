@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="second">
-          <img src="@/assets/img/fields_2.png" alt="Java后端" />
+          <img src="https://i.loli.net/2020/10/30/hfyqluZQ9scb5xC.png" alt="Java后端" />
           <div class="text">
             <h3 style="text-align:left; margin:0">Java后端</h3>
             <p

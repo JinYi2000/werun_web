@@ -24,20 +24,7 @@ export default {
     data(){
         return{
             leftDis:0,
-            newsList:[ { img: 'https://i.loli.net/2020/09/24/XYgTzaldxZJksu2.jpg',
-             name: '孙一恒',
-              grade: '2017',
-               major: '软件工程', dir: '后端' },
-            { img: 'https://i.loli.net/2020/09/24/uNwtjIHARCJKo9r.jpg', name: '鹿轶轩', grade: '2018', major: '软件工程', dir: '后端' },
-            { img: 'https://i.loli.net/2020/09/24/WH32b5Y1BxUO9jG.jpg', name: '莫张浩', grade: '2018', major: '计算机科学与技术', dir: '前端' },
-            { img: 'https://i.loli.net/2020/09/24/3bTWSMKkhIFVENv.jpg', name: '刘俊良', grade: '2018', major: '软件工程', dir: '后端' }
-            ,{ img: 'https://i.loli.net/2020/09/24/XYgTzaldxZJksu2.jpg',
-             name: '孙一恒',
-              grade: '2017',
-               major: '软件工程', dir: '后端' },
-            { img: 'https://i.loli.net/2020/09/24/uNwtjIHARCJKo9r.jpg', name: '鹿轶轩', grade: '2018', major: '软件工程', dir: '后端' },
-            { img: 'https://i.loli.net/2020/09/24/WH32b5Y1BxUO9jG.jpg', name: '莫张浩', grade: '2018', major: '计算机科学与技术', dir: '前端' },
-            { img: 'https://i.loli.net/2020/09/24/3bTWSMKkhIFVENv.jpg', name: '刘俊良', grade: '2018', major: '软件工程', dir: '后端' } ]
+            newsList:[ ]
         }
     },
     mounted(){
@@ -45,7 +32,7 @@ export default {
     },
     methods:{
         getData(){
-            this.$axios.get('/member/listMember').then(res=>{
+            this.$axios.get('https://club.werun.top:8888/homepage/member/listMember').then(res=>{
                 console.log(res);
                 this.newsList = res.data.data;
             })

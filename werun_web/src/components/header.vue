@@ -1,10 +1,16 @@
 <template>
 <div style='minWidth:1500px'>
     <img id='logo' src='https://i.loli.net/2020/09/23/fH9ihPlvUqtZJ1Q.png'>
+    <img id='logo2' src='https://i.loli.net/2020/12/09/X2h8TmILKsPWCE4.png'>
     <div class ='name'>
     <span>WERUN</span>
     <br/>
     <span>C L U B</span>
+    </div>
+    <div class ='name2'>
+    <span>I C E</span>
+    <br/>
+    <span>PHONE</span>
     </div>
     <div id='partsName' v-show='ifShow()'>
         <span @click='scroll("news")'>最新动态</span>
@@ -47,12 +53,28 @@ export default {
     width:50px;
     height:50px;
     float:left; 
-    margin-left:195px;
+    margin-left:105px;
+}
+#logo2{
+    position:absolute;
+    margin-top:55px;
+    width:60px;
+    height:80px;
+    float:left; 
+    left:265px;
 }
 .name{
     float:left;
     margin-top:67px;
     margin-left:20px;
+    color:#eceff1;
+    font-size:20px;
+    font-weight: bold;;
+}
+.name2{
+    float:left;
+    margin-top:67px;
+    margin-left:80px;
     color:#eceff1;
     font-size:20px;
     font-weight: bold;;

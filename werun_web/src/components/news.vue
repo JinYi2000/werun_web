@@ -22,12 +22,33 @@ export default {
     data(){
         return{
             leftDis:0,
-            newsList:[]
+            newsList:[{
+            id: "2c9a821d753fd39f0175596c21b00000",
+            title: "2016级舒钰博同学论文发表于JCR 1区杂志 CMC-Computers Materials ",
+            picUrl: "https://i.loli.net/2020/09/18/57uEnyzQJaI4HPA.jpg",
+            newsDate: null,
+            context: null,
+            briefIntro: null
+        },{
+            id: "2c9a821d753fd39f0175596c21b00000",
+            title: "2016级林春旭，2017级郭振豪、孙一恒同学论文被国际学术会议 ",
+            picUrl: "https://i.loli.net/2020/09/18/57uEnyzQJaI4HPA.jpg",
+            newsDate: null,
+            context: null,
+            briefIntro: null
+        },{
+            id: "2c9a821d753fd39f0175596c21b00000",
+            title: "2016级舒钰博同学论文发表于JCR 1区杂志 CMC-Computers Materials ",
+            picUrl: "https://i.loli.net/2020/09/18/57uEnyzQJaI4HPA.jpg",
+            newsDate: null,
+            context: null,
+            briefIntro: null
+        }]
         }
     },
     methods:{
         getNews(){
-            this.$axios.get('/news/listNews').then(res=>{
+            this.$axios.get('https://club.werun.top:8888/homepage/news/listNews').then(res=>{
                 console.log(res);
                 this.newsList = res.data.data;
             })
