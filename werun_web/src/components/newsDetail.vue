@@ -1,13 +1,6 @@
 <template>
     <div style='position:relative;'>
-        <div class='header'>
-            <img id='logo' src='https://i.loli.net/2020/09/23/O9CUbHKVoPci7q3.png'>
-            <div class ='name'>
-            <span>WERUN</span>
-            <br/>
-            <span>C L U B</span>
-            </div>
-        </div>
+        <myHeader></myHeader>
         <article id='article'>
             <h1>{{data.title}}</h1>
             <img id='article_img' src='https://i.loli.net/2020/09/18/57uEnyzQJaI4HPA.jpg'>
@@ -21,7 +14,7 @@
     </div> 
 </template>
 <script>
-import myHeader from '@/components/header'
+import myHeader from '@/components/headDetail'
 import myFooter from '@/components/footer'
 export default {
     data(){

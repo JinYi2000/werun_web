@@ -1,23 +1,23 @@
 <template>
 <div style='minWidth:1500px'>
     <img id='logo' src='https://i.loli.net/2020/09/23/fH9ihPlvUqtZJ1Q.png'>
-    <img id='logo2' src='https://i.loli.net/2020/12/09/X2h8TmILKsPWCE4.png'>
+    <!-- <img id='logo2' src='https://i.loli.net/2020/12/09/X2h8TmILKsPWCE4.png'> -->
     <div class ='name'>
     <span>WERUN</span>
     <br/>
     <span>C L U B</span>
     </div>
-    <div class ='name2'>
+    <!-- <div class ='name2'>
     <span>I C E</span>
     <br/>
     <span>PHONE</span>
-    </div>
+    </div> -->
     <div id='partsName' v-show='ifShow()'>
         <span @click='scroll("news")'>最新动态</span>
         <span @click='scroll("fields")'>研究方向</span>
         <span @click='scroll("projects")'>项目展示</span>
         <span @click='scroll("scientificResearch")'>科研成果</span>
-        <span @click='scroll("ourTeam")'>团队成员</span>
+        <!-- <span @click='scroll("ourTeam")'>团队成员</span> -->
         <span @click='scroll("joinUs")'>加入我们</span>
     </div>
 </div>
@@ -53,7 +53,7 @@ export default {
     width:50px;
     height:50px;
     float:left; 
-    margin-left:105px;
+    margin-left:195px;
 }
 #logo2{
     position:absolute;

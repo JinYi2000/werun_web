@@ -11,7 +11,7 @@
         <div id='context'>
             <h1 style='color:#455a64;margin-bottom:100px;margin-left:195px;text-align:left;'> 更多项目</h1>
             <div id="news">
-                <div class='newDetail' v-for='(item,index) in projectsList' >
+                <div class='newDetail' v-for='(item,index) in projectsList' :key='index' >
                         <img class='news_img' :src='item.picUrl'>
                         <span class='title1'>{{item.title}}</span>
                         <div class='line'></div>

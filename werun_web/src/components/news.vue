@@ -2,7 +2,7 @@
 <div>
     <span id='title'>最新动态</span>
     <div id='newsContent'  @mouseover="showPics()" @mouseout="concealPics()">
-        <div class='news' v-for="(item,key) in newsList" @click="viewDetail()">
+        <div class='news' v-for="(item,key) in newsList" @click="viewDetail()" :key='key'>
             <img class='news_img' :src='item.picUrl'>
             <span class='news_title'>{{item.title}}</span>
             <span class='news_date'>{{item.date}}</span>
@@ -22,7 +22,7 @@ export default {
     data(){
         return{
             leftDis:0,
-            newsList:[{
+            newsList:[]/* {
             id: "2c9a821d753fd39f0175596c21b00000",
             title: "2016级舒钰博同学论文发表于JCR 1区杂志 CMC-Computers Materials ",
             picUrl: "https://i.loli.net/2020/09/18/57uEnyzQJaI4HPA.jpg",
@@ -43,7 +43,7 @@ export default {
             newsDate: null,
             context: null,
             briefIntro: null
-        }]
+        } */
         }
     },
     methods:{
@@ -60,29 +60,23 @@ export default {
             this.$router.push('newsDetail');
         },
         showPics(){
-            //console.log('ok');
             var left = document.getElementById('left2');
             var right = document.getElementById('right2');
             left.style.opacity = 0.7;
             right.style.opacity = 0.7;
         },
         concealPics(){
-            //console.log('ok');
             var left = document.getElementById('left2');
             var right = document.getElementById('right2');
             left.style.opacity = 0;
             right.style.opacity = 0;
         },
         moveRight(){
-            //alert('ok');
             var news = document.getElementsByClassName('news');
-         
-            //console.log(news[0].style);
             var num = this.newsList.length;
-            var dis = num - 3;
+            var dis = num - 4;
             if(this.leftDis > -450*dis){
                 this.leftDis -= 450;
-                //console.log(this.leftDis + 'px')
                 for(let i = 0;i < news.length;i++){
                     news[i].style.left = this.leftDis + 'px';
                 }
@@ -90,27 +84,18 @@ export default {
             
         },
         moveLeft(){
-            //alert('ok');
             var news = document.getElementsByClassName('news');
-         
-            //console.log(news[0].style);
             var num = this.newsList.length;
             if(this.leftDis < 0){
                 this.leftDis += 450;
-                //console.log(this.leftDis + 'px');
-                //console.log(news);
                 for(let i = 0;i < news.length;i++){
                     news[i].style.left = this.leftDis + 'px';
                 }
             }
-            
         }
     },
     mounted(){
-        var newsContent = document.getElementById('newsContent');
         this.getNews();
-            
-        
     }   
 }
 </script>

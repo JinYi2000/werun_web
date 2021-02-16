@@ -4,7 +4,7 @@ export function debounce(fn,wait){
     let timer = null;
     return function(){
         if(timer){
-        clearTimeout(timer);
+            clearTimeout(timer);
         } 
         timer = setTimeout(()=>{
             fn.call(this);
@@ -15,12 +15,17 @@ export function debounce(fn,wait){
 
 export function throttle(fn,gapTime){
 //在一段时间内有大量操作，只执行其中一次
-    let lastTime = null;
-    let nowTime = null;
-    nowTime = Date.now();
-    if(!lastTime || nowTime - lastTime > gapTime){
-        fn();
-        lastTime = nowTime;
+    var timer = 0
+    return function(){
+        if(timer){
+            return 
+        }
+        else{
+            timer = setTimeout(()=>{
+                fn.call(this)
+                timer = null
+            },gapTime)
+        }
     }
 }
 

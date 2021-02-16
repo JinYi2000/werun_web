@@ -1,13 +1,6 @@
 <template>
     <div style='position:relative;'>
-        <div class='header'>
-            <img id='logo' src='https://i.loli.net/2020/09/23/O9CUbHKVoPci7q3.png'>
-            <div class ='name'>
-            <span>WERUN</span>
-            <br/>
-            <span>C L U B</span>
-            </div>
-        </div>
+        <myHeader></myHeader>
         <div id='context'>
             <h1 style='color:#455a64;margin-bottom:100px;margin-left:195px;text-align:left;'>更多动态</h1>
             <div id="news">
@@ -26,7 +19,7 @@
     </div> 
 </template>
 <script>
-import myHeader from '@/components/header'
+import myHeader from '@/components/headDetail'
 import myFooter from '@/components/footer'
 export default {
     data(){
@@ -108,7 +101,7 @@ export default {
     margin:auto;
     /* border:2px solid red; */
     flex:1 1 auto;
-    margin-top:150px;
+    margin-top:250px;
     
 }
 

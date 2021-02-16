@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 class axiosRequest{
     constructor(url,data,func){
         this.url = url;
@@ -7,9 +6,6 @@ class axiosRequest{
         this.func = func;
     }
     returnRes(res){
-        console.log('ok');
-        console.log(res);
-        console.log('ok');
         return res;
     }
     get(){

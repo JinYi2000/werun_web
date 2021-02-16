@@ -1,13 +1,13 @@
 <template>
     <div style='position:relative;'>
         <div class='header'>
-            <img id='logo' src='https://i.loli.net/2020/09/23/O9CUbHKVoPci7q3.png'>
+            <img id='logoDetail' src='https://i.loli.net/2020/09/23/O9CUbHKVoPci7q3.png'>
             <div class ='name'>
             <span>JOIN</span>
             <br/>
             <span>U S </span>
             </div>
-            <img id='logo2' src='https://i.loli.net/2020/12/09/UGPRdMivHXzpLmk.png'>
+            <!-- <img id='logo2' src='https://i.loli.net/2020/12/09/UGPRdMivHXzpLmk.png'> -->
             
         </div>
         <div id='context'>
@@ -162,7 +162,7 @@ export default {
     background-color: white;
     transition: background-color 0.5s linear
 }
-#logo{
+#logoDetail{
     margin-top:42px;
     width:50px;
     height:50px;
@@ -243,12 +243,6 @@ export default {
    
     overflow: auto;
 }
-.textareas{
-
-}
-.el-input{
-
-}
 @media screen and (min-width:800px){
 #context{
     margin-top:150px;
@@ -307,8 +301,4 @@ footer{
     position:relative;
     color:red;
 }
-/* 
-
-#
- */
 </style>

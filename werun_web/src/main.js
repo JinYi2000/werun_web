@@ -7,7 +7,7 @@ import axios from 'axios'
 import request from '@/components/axios_request'
 //import 'element-ui/lib/theme-chalk/index.css';
 //import ElementUI from 'element-ui';
-import { Input,Select,Option,OptionGroup } from 'element-ui';
+import { Input,Select,OptionGroup,Option } from 'element-ui';
 axios.defaults.baseURL = 'homepage/'
   
 Vue.config.productionTip = false
